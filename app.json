@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/allAssociationLists/allAssociationLists",
+    "pages/myAssociationLists/myAssociationLists",
+    "pages/personalCenter/personalCenter",
+    "pages/associationIndex-unjoined/associationIndex-unjoined"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#61b6fd",
+    "navigationBarTitleText": "社团小助手",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/myAssociationLists/myAssociationLists",
+        "text": "我的社团",
+        "iconPath": "assets/images/tabBar/my.png",
+        "selectedIconPath": "assets/images/tabBar/my_active.png"
+      },
+      {
+        "pagePath": "pages/allAssociationLists/allAssociationLists",
+        "text": "所有社团",
+        "iconPath": "assets/images/tabBar/all.png",
+        "selectedIconPath": "assets/images/tabBar/all_active.png"
+      },
+      {
+        "pagePath": "pages/personalCenter/personalCenter",
+        "text": "个人中心",
+        "iconPath": "assets/images/tabBar/personal.png",
+        "selectedIconPath": "assets/images/tabBar/personal_active.png"
+      }
+    ],
+    "color": "#6d6d6d",
+    "selectedColor": "#61b6fd"
+  },
+  "sitemapLocation": "sitemap.json"
+}

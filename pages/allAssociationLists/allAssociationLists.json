@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "search":"@vant/weapp/search/index",
+    "list":"./childCpn/list/list"
+  }
+}

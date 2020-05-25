@@ -1,0 +1,20 @@
+<view class="box" bindtap="listClick">
+  <!-- 社团头像 -->
+  <view class="logo">
+    <image src="{{logoSrc}}"
+           mode="aspectFill"
+           class="logo_img"></image>
+    <!-- 消息提示 -->
+    <view class="tips">{{tipsNum>99?"99+":tipsNum}}</view>
+  </view>
+  <view class="info">
+    <!-- 社团名称 -->
+    <view class="info_name">{{name}}</view>
+    <!-- 社团简介 -->
+    <view class="info_intro">{{intro}}</view>
+  </view>
+  <!-- icon -->
+  <view class="icon">
+    <text class="iconfont iconjiantouxiadown"></text>
+  </view>
+</view>

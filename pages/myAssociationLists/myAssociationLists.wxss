@@ -1,0 +1,6 @@
+/* pages/myAssociation/myAssociation.wxss */
+.box {
+  background-color: #eaebee;
+  height: calc(100vh - 16rpx);
+  padding: 16rpx 0 0;
+}

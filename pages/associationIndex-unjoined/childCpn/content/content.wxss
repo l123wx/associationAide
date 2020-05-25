@@ -1,0 +1,7 @@
+.hidden {
+  display: none;
+}
+.showRoom>image {
+  width: 100%;
+  height: auto;
+}

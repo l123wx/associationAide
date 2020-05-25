@@ -1,0 +1,19 @@
+<wxs src="../../../../filters/string.wxs" module="filters" />
+<view class="box">
+  <view class="info">
+    <view class="name">{{name}}</view>
+    <view class="intro">
+      <view class="{{introShowAll?'hidden':''}}">
+        {{intro.length>38?filters.substring(intro,0,38)+"...":intro}}
+        <text wx:if="{{intro.length>38}}" bindtap="loadMore">展开</text>
+      </view>
+      <view class="{{!introShowAll?'hidden':''}}">
+        {{intro}}
+        <text wx:if="{{intro.length>38}}" bindtap="closeMore">收起</text>
+      </view>
+    </view>
+  </view>
+  <view class="logo">
+    <image src="{{logoSrc}}"></image>
+  </view>
+</view>

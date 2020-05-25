@@ -1,0 +1,31 @@
+<view class="box">
+  <!-- 社团头像 -->
+  <view class="logo">
+    <image 
+      src="{{logoSrc}}"
+      mode="aspectFill"
+      class="logo_img"></image>
+  </view>
+  <view class="info">
+    <!-- 社团名称 -->
+    <view class="info_name">{{name}}</view>
+    <!-- 社团简介 -->
+    <view class="info_intro">{{intro}}</view>
+    <!-- 标签 -->
+    <view class="info_label">
+      <!-- 人数 -->
+      <view class="num">
+        <text class="iconfont iconmine"></text>
+        12
+      </view>
+      <!-- 类型 -->
+      <view class="type">体育文艺</view>
+      <!-- 级别：校级|院级 -->
+      <view class="class">校级</view>
+    </view>
+  </view>
+  <!-- icon -->
+  <view class="icon">
+    <text class="iconfont iconjiantouxiadown"></text>
+  </view>
+</view>

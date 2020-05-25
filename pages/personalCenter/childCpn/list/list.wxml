@@ -1,0 +1,9 @@
+<view class="box">
+  <view class="iconfont {{iconClass}}"
+        style="color:{{iconColor}}"></view>
+  <view class="title">{{title}}</view>
+  <view class="iconfont">
+    <view class="iconjiantouxiadown"></view>
+  </view>
+  <view class="content">{{content}}</view>
+</view>

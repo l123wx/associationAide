@@ -1,0 +1,13 @@
+<view>
+  <view class="top">
+    <!-- 头部信息栏 -->
+    <header
+      name="文学院足球社"
+      intro="我是社团简介我是社团简介我是社团简介我是社团简介我是我是社团简介我是我是社团简介"
+      logoSrc="https://i1.hdslb.com/bfs/face/841571ea26d90a589bbd25c3f6d558da9070fbd5.jpg@45w_45h_1c_100q.webp"/>
+    <!-- 导航栏 -->
+    <nav bind:navClick="navClick"/>
+  </view>
+  <!-- 内容显示部分 pageIndex:简介：0 | 展示：1 | 活动：2 -->
+  <content pageIndex="{{pageIndex}}"/>
+</view>

@@ -1,0 +1,11 @@
+/* pages/personalCenter/personalCenter.wxss */
+.box {
+  height: calc(100vh);
+  background-color: #edeeee;
+}
+.infoLists {
+  margin-top: 56rpx;
+}
+.settingList {
+  margin: 36rpx 0; 
+}

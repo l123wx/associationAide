@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "header":"./childCpn/header/header",
+    "list":"./childCpn/list/list"
+  }
+}

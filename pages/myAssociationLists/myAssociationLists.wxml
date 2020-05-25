@@ -1,0 +1,7 @@
+<!--pages/myAssociation/myAssociation.wxml-->
+<scroll-view class="box" scroll-y>
+  <list tipsNum="1"
+        logoSrc="https://i1.hdslb.com/bfs/face/841571ea26d90a589bbd25c3f6d558da9070fbd5.jpg@45w_45h_1c_100q.webp"
+        name="社团名称"
+        intro="这是一个社团的简介这是一个社团的简介" />
+</scroll-view>

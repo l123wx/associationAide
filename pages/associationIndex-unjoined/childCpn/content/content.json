@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "label": "../label/label",
+    "album": "../album/album",
+    "class": "../class/class",
+    "contact": "../contact/contact"
+  }
+}

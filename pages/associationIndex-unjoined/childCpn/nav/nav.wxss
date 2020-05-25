@@ -1,0 +1,24 @@
+.box {
+  padding: 12rpx 0;
+  margin: 0 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.box>view {
+  height: 50rpx;
+  width: 110rpx;
+  border-radius: 25rpx;
+  display: inline-block;
+  color: #a0a0a0;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  margin: 0 4rpx;
+}
+.box>view:active {
+  background-color: #61b6fd;
+  color: #fff;
+}
+.box>view.active {
+  background-color: #61b6fd;
+  color: #fff;
+}

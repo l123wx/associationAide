@@ -1,0 +1,19 @@
+<view class="box">
+  <view class="background"></view>
+  <view class="info">
+    <view class="avatar">
+      <image src="{{avatarSrc}}"></image>
+    </view>
+    <view class="name">{{username}}</view>
+    <view class="association_Num">
+      <view class="joined_Num">
+        <view>参与社团</view>
+        <view>{{joinedNum}}</view>
+      </view>
+      <view class="manage_Num">
+        <view>可管理社团</view>
+        <view>{{manageNum}}</view>
+      </view>
+    </view>
+  </view>
+</view>

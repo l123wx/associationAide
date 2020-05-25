@@ -1,0 +1,19 @@
+.box {
+  padding: 30rpx 40rpx 0;
+}
+.title {
+  font-size: 30rpx;
+  color: #626262;
+}
+.pic {
+  margin-top: 15rpx;
+}
+.pic image {
+  height: 213rpx;
+  width: 213rpx;
+  border-radius: 8rpx;
+  background-color: #a5a5a6;
+}
+.pic image+image {
+  margin-left: 16rpx;
+}

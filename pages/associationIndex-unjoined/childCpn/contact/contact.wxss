@@ -1,0 +1,27 @@
+@import "/styles/iconfont";
+.box {
+  padding: 30rpx 40rpx 0;
+}
+.title {
+  font-size: 30rpx;
+  color: #626262;
+}
+.contact {
+  margin-top: 15rpx;
+}
+.contact>view {
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-bottom: 4rpx;
+}
+.contact>view>view {
+  display: inline-block;
+  font-size: 24rpx;
+  color: #959595;
+  vertical-align: top;
+}
+.contact>view>view.iconfont {
+  font-size: 40rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+}

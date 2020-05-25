@@ -1,0 +1,14 @@
+<view class="box">
+  <view 
+    class="{{activeIndex==0?'active':''}}"
+    bindtap="clickBtn"
+    data-index="0">简介</view>
+  <view 
+    class="{{activeIndex==1?'active':''}}"
+    bindtap="clickBtn"
+    data-index="1">展示</view>
+  <view 
+    class="{{activeIndex==2?'active':''}}"
+    bindtap="clickBtn"
+    data-index="2">活动</view>
+</view>

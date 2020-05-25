@@ -1,0 +1,12 @@
+<view class="box">
+  <view class="title">社团相册</view>
+  <view class="pic">
+    <block wx:for="{{picUrlLists}}" wx:key="index"> 
+      <image 
+        src="{{item}}"
+        mode="aspectFill"
+        data-url="{{item}}"
+        bindtap="previewImage"></image>
+    </block>
+  </view>
+</view>

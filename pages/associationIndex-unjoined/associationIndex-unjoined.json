@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "header": "./childCpn/header/header",
+    "nav": "./childCpn/nav/nav",
+    "content": "./childCpn/content/content"
+  }
+}

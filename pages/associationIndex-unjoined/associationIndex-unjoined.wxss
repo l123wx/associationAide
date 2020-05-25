@@ -1,0 +1,6 @@
+/* pages/associationIndex-unjoined/associationIndex-unjoined.wxss */
+.top {
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+}

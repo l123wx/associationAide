@@ -1,0 +1,21 @@
+<view class="{{pageIndex!=0?'hidden':''}}">
+  <!-- 社团标签 -->
+  <label 
+    peopleNum="10"
+    type="体育运动"
+    level="校级"/>
+  <!-- 相册 -->
+  <album picUrlLists="{{picUrlLists}}"/>
+  <!-- 部门分类 -->
+  <class classLists="{{classLists}}"/>
+  <!-- 联系方式 -->
+  <contact/>
+</view>
+<view class="{{pageIndex!=1?'hidden':''}}">
+  <view class="showRoom">
+    <image mode="widthFix" src="https://7465-text1-a2nyq-1258922599.tcb.qcloud.la/content.jpg?sign=8d10ad9242ca8afd71853ab9ceb03bc6&t=1590428691"></image>
+  </view>
+</view>
+<view class="{{pageIndex!=2?'hidden':''}}">
+
+</view>

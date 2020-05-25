@@ -1,0 +1,6 @@
+<view class="box">
+  <view class="title">部门分类</view>
+  <view class="class">
+    <view wx:for="{{classLists}}" wx:key="index">{{item}}</view>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+.box {
+  padding: 30rpx 40rpx 0;
+}
+.title {
+  font-size: 30rpx;
+  color: #626262;
+}
+.class {
+  margin-top: 4rpx;
+}
+.class>view {
+  display: inline-block;
+  font-size: 24rpx;
+  color: #959595;
+}
+.class>view::after {
+  content:'、'
+}
+.class>view:last-child::after {
+  content:''
+}

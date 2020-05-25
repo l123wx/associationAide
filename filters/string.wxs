@@ -1,0 +1,8 @@
+//字符串的substr方法
+var substring = function (str,index,num) {
+  return str.substring(index,num);
+};
+
+module.exports = {
+  substring: substring
+}

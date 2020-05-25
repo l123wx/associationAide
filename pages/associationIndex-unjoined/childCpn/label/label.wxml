@@ -1,0 +1,14 @@
+<view class="box">
+  <view class="title">社团标签</view>
+  <view class="info_label">
+    <!-- 人数 -->
+    <view class="num" wx:if="{{peopleNum}}">
+      <text class="iconfont iconmine"></text>
+      {{peopleNum}}
+    </view>
+    <!-- 类型 -->
+    <view class="type" wx:if="{{type}}">{{type}}</view>
+    <!-- 级别：校级|院级 -->
+    <view class="class" wx:if="{{level}}">{{level}}</view>
+  </view>
+</view>
