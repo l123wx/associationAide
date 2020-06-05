@@ -1,0 +1,131 @@
+.timeLineItem {
+  padding: 0 30rpx;
+  margin-top: 35rpx;
+  padding-bottom: 10rpx;
+}
+.timeLineItem>view {
+  display: inline-block;
+  vertical-align: top;
+}
+/* 左侧年月时间 */
+.monthAndYear {
+  width: 70rpx;
+}
+.monthAndYear>.month {
+  font-size: 30rpx;
+  color: #626262;
+  text-align: center;
+  line-height: 32rpx;
+}
+.monthAndYear>.year {
+  font-size: 22rpx;
+  color: #959595;
+  text-align: center;
+  line-height: 22rpx;
+  margin-top: 14rpx;
+}
+
+/* 时间轴主体 */
+.timeLine {
+  text-align: center;
+  width: 66rpx;
+  margin-right: 4rpx;
+}
+.timeLine>view {
+  position: relative;
+  margin-top: 4rpx;
+}
+/* 竖线 */
+.timeLine>view>view:nth-child(1) {
+  width: 1rpx;
+  background-color: #62d8fe;
+  height: 230rpx;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+/* 圆点 */
+.timeLine>view>view:nth-child(2) {
+  vertical-align: top;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: rgb(97, 160, 252);
+  width: 16rpx;
+  height: 16rpx;
+  box-shadow: 0px 0px 8px #61a0fc;
+  position: relative;
+}
+.showMonth .timeLine>view>view:nth-child(2) {
+  width: 25rpx;
+  height: 25rpx;
+}
+
+
+/* 右侧卡片 */
+.activityCard {
+  position: relative;
+  height: 182rpx;
+  width: 547rpx
+}
+
+/* 装饰用的卡片 */
+.underCard {
+  width: 547rpx;
+  height: 182rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+  box-shadow: 0px 0px 9.2px 0.8px rgba(0, 0, 0, 0.09);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: top .1s, left .1s;
+}
+.underCard:nth-child(1) {
+  left: 14rpx;
+  top: 14rpx;
+}
+.underCard:nth-child(2) {
+  left: 7rpx;
+  top: 7rpx;
+}
+.activityCard.active>.underCard:nth-child(2) {
+  left: 10rpx;
+  top: 10rpx;
+}
+.activityCard.active>.underCard:nth-child(3) {
+  left: 6rpx;
+  top: 6rpx;
+}
+.activityCard.active>.middle {
+  left: 6rpx;
+  top: 6rpx;
+}
+.middle {
+  position: relative;
+  margin: 18rpx 20rpx 0 32rpx;
+  transition: top .1s, left .1s;
+  left: 0;
+  top: 0;
+}
+.activityCard .title {
+  font-size: 30rpx;
+  color: #626262;
+}
+.activityCard .content {
+  font-size: 22rpx;
+  color: #959595;
+  margin-top: 10rpx;
+  display: -webkit-box;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 65rpx;
+}
+.activityCard .time {
+  font-size: 22rpx;
+  color: #b5b5b5;
+  text-align: right;
+  margin-top: 8rpx;
+}

@@ -1,16 +1,27 @@
-<view class="box">
+<view class="box" style="background-color:{{!allAssociationLists.length?'#fff':'#eee'}}">
   <view class="search">
     <search
-      value=""
+      value="{{searchValue}}"
       shape="round"
       background="#61b6fd"
       placeholder="搜索社团"
+      bind:search="onSearch"
+      bind:change="onChange"
     />
   </view>
-  <list 
-    wx:for="{{10}}"
-    wx:key="index"
-    logoSrc="https://i1.hdslb.com/bfs/face/841571ea26d90a589bbd25c3f6d558da9070fbd5.jpg@45w_45h_1c_100q.webp"
-    name="社团名称"
-    intro="这是一个社团的简介这是一个社团的简介"/>
+  <view class="{{allAssociationLists.length?'':'hidden'}}">
+    <list 
+      wx:for="{{allAssociationLists}}"
+      wx:key="index"
+      logoSrc="{{item.logoUrl}}"
+      name="{{item.name}}"
+      intro="{{item.introduction}}"
+      personCount="{{item.personCount}}"
+      tagsName="{{item.tagsName}}"
+      collegeName="{{item.collegeName}}"
+      aid="{{item.id}}"/>
+  </view>
+  <view class="{{!allAssociationLists.length?'':'hidden'}} emptyHint">
+    <emptyHint bgType="2" statusText="没有相关社团，换个关键词吧"/>
+  </view>
 </view>

@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "list": "childCpn/associationList/associationList"
+    "list": "childCpn/associationList/associationList",
+    "emptyHint": "/compontents/emptyHint/emptyHint"
   }
 }

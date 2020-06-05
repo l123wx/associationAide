@@ -10,7 +10,7 @@
   position: relative;
   transition: background-color .2s;
 }
-.box:active {
+.box.active {
   background-color: #f3f3f3;
 }
 .logo {

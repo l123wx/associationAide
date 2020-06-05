@@ -1,7 +1,12 @@
 .hidden {
   display: none;
 }
-.showRoom>image {
-  width: 100%;
-  height: auto;
+.showRoom {
+  padding: 0 20rpx;
+}
+.emptyHint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }

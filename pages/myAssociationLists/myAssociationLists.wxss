@@ -1,6 +1,14 @@
 /* pages/myAssociation/myAssociation.wxss */
 .box {
-  background-color: #eaebee;
+  /* background-color: #eee; */
   height: calc(100vh - 16rpx);
   padding: 16rpx 0 0;
+  transition: background-color .1s;
+}
+.emptyHint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
 }

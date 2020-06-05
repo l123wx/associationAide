@@ -14,10 +14,10 @@
   font-size: 28rpx;
   margin: 0 4rpx;
 }
-.box>view:active {
+/* .box>view:active {
   background-color: #61b6fd;
   color: #fff;
-}
+} */
 .box>view.active {
   background-color: #61b6fd;
   color: #fff;

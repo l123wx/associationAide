@@ -1,6 +1,7 @@
 <view class="box">
   <view class="title">部门分类</view>
   <view class="class">
+    <view wx:if="{{!classLists.length}}">无</view>
     <view wx:for="{{classLists}}" wx:key="index">{{item}}</view>
   </view>
 </view>

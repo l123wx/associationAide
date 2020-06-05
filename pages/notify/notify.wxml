@@ -1,0 +1,58 @@
+<view class="box">
+  <view class="header">
+    <!-- 头部一级导航 -->
+    <header 
+      wx:if="{{userStatus==1}}"
+      navItemLists="{{firstNavItemLists}}" 
+      bindnavClick="firstNavClick"/>
+    <!-- 二级导航 -->
+    <second-nav
+      navItemLists="{{firstNavIndex==0?secondNavItemLists:secondNavItemLists_admin}}" 
+      bindnavClick="secondNavClick"/>
+  </view>
+  <!-- 我的通知 普通成员页面 -->
+  <view class="{{firstNavIndex==0?'':'hidden'}}">
+    <view 
+      class="notify-box {{item.isRead==1?(secondNavIndex==1?'hidden':''):(secondNavIndex==2?'hidden':'')}}" 
+      wx:for="{{userNoticeList}}" 
+      wx:key="index">
+      <notifyItem
+        title="{{item.title}}"
+        content="{{item.content}}"
+        isRead="{{item.isRead}}"
+        beginTime="{{item.beginTime}}"
+        endTime="{{item.endTime}}"
+        nId="{{item.nid}}"
+        userCount="{{item.userCount}}"
+        userReadCount="{{item.userReadCount}}"/>
+    </view>
+  </view>
+  <!-- 全部通知 管理员页面 -->
+  <view class="{{firstNavIndex==1?'':'hidden'}}">
+    <view 
+      class="notify-box {{item.userCount==item.userReadCount?(secondNavIndex==1?'hidden':''):(secondNavIndex==2?'hidden':'')}}" 
+      wx:for="{{managerNoticeList}}" 
+      wx:key="index">
+      <notifyItem
+        title="{{item.title}}"
+        content="{{item.content}}"
+        isRead="{{1}}"
+        beginTime="{{item.beginTime}}"
+        endTime="{{item.endTime}}"
+        nId="{{item.nid}}"
+        userCount="{{item.userCount}}"
+        userReadCount="{{item.userReadCount}}"
+        userType="{{userStatus}}"/>
+    </view>
+  </view>
+  <!-- 添加按钮 -->
+  <view 
+    wx:if="{{userStatus==1}}" 
+    class="addBtn {{firstNavIndex==1?'show':''}}"
+    hover-class="active"
+    hover-start-time="0"
+    hover-stay-time="200"
+    bindtap="addBtnClick">
+    <text class="iconfont icontianjia"></text>
+  </view>
+</view>

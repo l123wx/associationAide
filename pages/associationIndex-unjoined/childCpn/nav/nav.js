@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    // 初始化时的页面index
+    index: {
+      type: Number
+    }
   },
 
   /**
@@ -23,6 +26,14 @@ Component({
         activeIndex:e.target.dataset.index
       })
       this.triggerEvent('navClick', e.target.dataset.index, {})
+    }
+  },
+  lifetimes: {
+    ready() {
+      let index = this.properties.index;
+      this.setData({
+        activeIndex: index
+      })
     }
   }
 })

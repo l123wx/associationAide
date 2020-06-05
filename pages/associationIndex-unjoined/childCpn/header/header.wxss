@@ -32,7 +32,7 @@
 .logo {
   height: 144rpx;
   width: 144rpx;
-  background-color: #a5a5a6;
+  /* background-color: #a5a5a6; */
   border-radius: 50%;
   float: right;
   margin-top:  30rpx;

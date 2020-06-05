@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "header":"./childCpn/header/header",
-    "list":"./childCpn/list/list"
+    "list":"./childCpn/list/list",
+    "picker": "@vant/weapp/picker/index"
   }
 }

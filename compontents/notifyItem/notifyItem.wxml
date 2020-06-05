@@ -1,0 +1,15 @@
+<!-- 基于通知雏形写的通知组件，没有过多的样式，但内容显示的逻辑都处理过了，使用时将参数直接传进来就行了 -->
+<view class="box" bindtap="notifyItemClick">
+  <!-- 根据用户总量来判断是否显示已读未读，若用户总量为0，就不显示 -->
+  <!-- 如果是管理员，则在所有人都已读后显示“已结束”，如果是普通成员，则在已读后显示“已读” -->
+  <notifyItem 
+    title="{{title}}"
+    content="{{content}}"
+    iconBgColor="linear-gradient( 44deg, rgb(100,132,255) 0%, rgb(89,178,255) 100%)"
+    iconClass="icontongzhi"
+    statusContent="{{userType==1?'已结束':'已读'}}"
+    showStatus="{{userType==1?userCount==userReadCount:isRead==1}}"
+    time="{{time}}"
+    readedNum="{{isRead==0?'未读':'已读'+userReadCount+'/'+userCount}}"
+    showReadedNum="{{userCount!=0}}" /> 
+</view>

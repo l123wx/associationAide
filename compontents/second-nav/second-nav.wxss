@@ -1,0 +1,16 @@
+.box {
+  height: 73rpx;
+  background-color: #edeeee;
+  line-height: 73rpx;
+  padding: 0 16rpx
+}
+.box>view {
+  height: 73rpx;
+  font-size: 24rpx;
+  color: #a0a0a0;
+  display: inline-block;
+  padding: 0 16rpx;
+}
+.box>view.active {
+  color: #434343;
+}

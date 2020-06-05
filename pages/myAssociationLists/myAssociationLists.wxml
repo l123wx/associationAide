@@ -1,7 +1,17 @@
 <!--pages/myAssociation/myAssociation.wxml-->
-<scroll-view class="box" scroll-y>
-  <list tipsNum="1"
-        logoSrc="https://i1.hdslb.com/bfs/face/841571ea26d90a589bbd25c3f6d558da9070fbd5.jpg@45w_45h_1c_100q.webp"
-        name="社团名称"
-        intro="这是一个社团的简介这是一个社团的简介" />
+<scroll-view class="box" scroll-y style="background-color:{{!myAssociationLists.length?'#fff':'#eee'}}">
+  <view wx:if="{{myAssociationLists.length}}">
+    <block wx:for="{{myAssociationLists}}" wx:key="index">
+      <list 
+        aId="{{item.id}}"
+        tipsNum="{{item.noticeCount}}"
+        logoSrc="{{item.logoUrl}}"
+        name="{{item.name}}"
+        intro="{{item.introduction}}"/>
+    </block>
+  </view>
+  <view class="emptyHint" wx:else>
+    <emptyHint wx:if="{{logined}}" bgType="1" statusText="未登录" buttonText="点击登录社团小助手" bindemptyHintBtnClick="toLogin"/>
+    <emptyHint wx:else bgType="1" statusText="还没有加入社团，快去加入吧"/>
+  </view>
 </scroll-view>

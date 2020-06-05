@@ -1,4 +1,4 @@
-<view class="box">
+<view class="box" bindtap="listItemClick">
   <!-- 社团头像 -->
   <view class="logo">
     <image 
@@ -16,12 +16,12 @@
       <!-- 人数 -->
       <view class="num">
         <text class="iconfont iconmine"></text>
-        12
+        {{personCount}}
       </view>
       <!-- 类型 -->
-      <view class="type">体育文艺</view>
+      <view class="type" wx:if="{{tagsName!=''}}">{{tagsName}}</view>
       <!-- 级别：校级|院级 -->
-      <view class="class">校级</view>
+      <view class="class" wx:if="{{collegeName!=''}}">{{collegeName}}</view>
     </view>
   </view>
   <!-- icon -->

@@ -1,0 +1,26 @@
+<view class="container">
+  <editor 
+    id="editor" 
+    class="ql-container" 
+    placeholder="{{placeholder}}" 
+    bindstatuschange="onStatusChange" 
+    bindready="onEditorReady"
+    show-img-resize="{{true}}"
+    show-img-toolbar="{{true}}"
+    show-img-size="{{true}}">
+  </editor>
+</view>
+<view class="toolbar" catchtouchend="format" style="bottom: {{isIOS ? keyboardHeight : 0}}px">
+  <i class="iconfont icontupian" catchtouchend="insertImage"></i>
+  <i class="iconfont iconbiaoti {{formats.header === 2 ? 'ql-active' : ''}}" data-name="header" data-value="{{2}}"></i>
+  <i class="iconfont iconjiacu {{formats.bold ? 'ql-active' : ''}}" data-name="bold"></i>
+  <i class="iconfont iconzitixieti {{formats.italic ? 'ql-active' : ''}}" data-name="italic"></i>
+  <i class="iconfont iconyouxuliebiao {{formats.list === 'ordered' ? 'ql-active' : ''}}" data-name="list" data-value="ordered"></i>
+  <i class="iconfont iconul {{formats.list === 'bullet' ? 'ql-active' : ''}}" data-name="list" data-value="bullet"></i>
+  <i class="iconfont icondivider" bindtap="insertDivider"></i>
+  <i class="iconfont iconicon-undo" bindtap="undo"></i>
+  <i class="iconfont iconicon-redo" bindtap="redo"></i>
+</view>
+<view class="button">
+  <button type="primary">完成编辑</button>
+</view>

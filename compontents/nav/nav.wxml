@@ -1,0 +1,15 @@
+<view class="box">
+  <!-- 横线 -->
+  <view 
+    class="line"
+    style="width:calc(100% / {{navItemLists.length}});left:calc(100% / {{navItemLists.length}} * {{activeIndex}})"></view>
+  <!-- 按钮 -->
+  <view 
+    wx:for="{{navItemLists}}" 
+    wx:key="index"
+    data-index="{{index}}"
+    bindtap="click">
+    <text class="iconfont {{item.iconClass}}"></text>
+    {{item.title}}
+  </view>
+</view>

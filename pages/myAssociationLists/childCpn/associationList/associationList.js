@@ -19,6 +19,9 @@ Component({
     // 社团简介
     intro: {
       type: String
+    },
+    aId: {
+      type: Number
     }
   },
 
@@ -35,7 +38,10 @@ Component({
   methods: {
     // 社团被点击时触发
     listClick() {
-      console.log("去详情页")
+      // console.log("去详情页"+this.properties.aId) 
+      wx.navigateTo({
+        url:"/pages/associationIndex-joined/associationIndex-joined?id="+this.properties.aId+"&name="+this.properties.name
+      })
     }
   }
 })

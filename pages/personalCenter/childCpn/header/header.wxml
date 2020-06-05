@@ -1,18 +1,26 @@
 <view class="box">
   <view class="background"></view>
   <view class="info">
+    <!-- 头像 -->
     <view class="avatar">
-      <image src="{{avatarSrc}}"></image>
+      <image src="{{userLogined?avatarSrc:''}}"></image>
     </view>
-    <view class="name">{{username}}</view>
+    <!-- 昵称 ：已登录时显示 -->
+    <view class="name" wx:if="{{userLogined}}">{{username}}</view>
+    <!-- 登陆提示 ：未登录时显示-->
+    <button 
+      class="name" 
+      wx:if="{{!userLogined}}"
+      open-type="getUserInfo"
+      bindgetuserinfo='login'>点击授权登陆</button>
     <view class="association_Num">
       <view class="joined_Num">
         <view>参与社团</view>
-        <view>{{joinedNum}}</view>
+        <view>{{userLogined?joinedNum:0}}</view>
       </view>
       <view class="manage_Num">
         <view>可管理社团</view>
-        <view>{{manageNum}}</view>
+        <view>{{userLogined?manageNum:0}}</view>
       </view>
     </view>
   </view>

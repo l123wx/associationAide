@@ -1,4 +1,5 @@
 // pages/associationIndex-unjoined/childCpn/content/content.js
+import {activityClassify} from "../../../../utils/util"
 Component({
   /**
    * 组件的属性列表
@@ -6,6 +7,10 @@ Component({
   properties: {
     pageIndex: {
       type: Number
+    },
+    // 社团信息
+    associationInfo: {
+      type: Object
     }
   },
 
@@ -13,19 +18,31 @@ Component({
    * 组件的初始数据
    */
   data: {
-    picUrlLists: [
-      "https://i1.hdslb.com/bfs/face/841571ea26d90a589bbd25c3f6d558da9070fbd5.jpg@45w_45h_1c_100q.webp",
-      "https://huyaimg.msstatic.com/cdnimage/roomad/pic_1590377603.jpg",
-      "https://huyaimg.msstatic.com/cdnimage/roomad/pic_1590406313.jpg"
-    ],
-    classLists: [
-      "设计部",
-      "页面部",
-      "编程部",
-      "文秘部"
-    ]
+    picUrlLists: [],
+    classLists: [],
+    activityLists: []
   },
-
+  observers: {
+    associationInfo(newVal){
+      // 从社团信息中把相册url拿出来放到数组里
+      let picUrlLists = [];
+      for(var item in newVal.communityPhotos){
+        picUrlLists.push(newVal.communityPhotos[item].photoUrl);
+      }
+      // 从社团信息中把部门信息拿出来放到数组里
+      let classLists = [];
+      for(var item in newVal.communityDepartments){
+        classLists.push(newVal.communityDepartments[item].name);
+      }
+      // 从社团信息中把活动列表的格式整理一下
+      const activityLists = activityClassify(newVal.allCommunityActivityVos);
+      this.setData({
+        picUrlLists,
+        classLists,
+        activityLists
+      })
+    }
+  },
   /**
    * 组件的方法列表
    */

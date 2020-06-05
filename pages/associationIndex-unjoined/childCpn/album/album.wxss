@@ -8,6 +8,11 @@
 .pic {
   margin-top: 15rpx;
 }
+.pic>view {
+  display: inline-block;
+  font-size: 24rpx;
+  color: #959595;
+}
 .pic image {
   height: 213rpx;
   width: 213rpx;

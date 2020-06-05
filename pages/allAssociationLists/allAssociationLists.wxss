@@ -1,4 +1,6 @@
 .box {
+  height: calc(100vh);
+  transition: background-color .1s;
 }
 .search {
   position: sticky;
@@ -7,4 +9,14 @@
 }
 .van-search__content.van-search__content {
   background-color: #ffffff;
+}
+.emptyHint {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+}
+.hidden {
+  display: none;
 }

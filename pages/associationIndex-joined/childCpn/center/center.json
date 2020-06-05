@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "function": "../function/function",
+    "notifyItem": "/compontents/notifyItem/notifyItem",
+    "emptyHint": "/compontents/emptyHint/emptyHint"
+  }
+}

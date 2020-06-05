@@ -1,0 +1,68 @@
+<!-- 这部分用太多三段表达式了，可读性有点差
+      核心的思想是：
+        每次点击二级导航栏时，先通过secondNavIndex判断是第几个导航选项，
+        再判断是否需要隐藏
+        隐藏通过添加class hidden来实现 -->
+<view class="box">
+  <view class="header">
+    <!-- 头部一级导航 -->
+    <header 
+      wx:if="{{userStatus==1}}"
+      navItemLists="{{firstNavItemLists}}" 
+      bindnavClick="firstNavClick"/>
+    <!-- 二级导航 -->
+    <second-nav
+      navItemLists="{{firstNavIndex==0?secondNavItemLists:secondNavItemLists_admin}}" 
+      bindnavClick="secondNavClick"/>
+  </view>
+  <!-- 我的签到 普通成员页面 -->
+  <view class="{{firstNavIndex==0?'':'hidden'}}">
+    <view 
+      class="notify-box {{secondNavIndex==1?(!item.isSign==1?'':'hidden'):secondNavIndex==2?(item.isSign==1?'':'hidden'):secondNavIndex==3?(!item.isSign==1&&item.isEnded?'':'hidden'):''}}" 
+      wx:for="{{userSignInList}}" 
+      wx:key="index">
+      <singInItem
+        title="{{item.title}}"
+        content="{{item.content}}"
+        isSign="{{item.isSign}}"
+        beginTime="{{item.beginTime}}"
+        endTime="{{item.endTime}}"
+        nId="{{item.signId}}"
+        userCount="{{item.userCount}}"
+        userReadCount="{{item.userReadCount}}"
+        userType="{{0}}"
+        isEnded="{{item.isEnded}}"
+        isStarted="{{item.isStarted}}"/>
+    </view>
+  </view>
+  <!-- 全部签到 管理员页面 -->
+  <view class="{{firstNavIndex==1?'':'hidden'}}">
+    <view 
+      class="notify-box {{secondNavIndex==1?(item.isStarted&&!item.isEnded?'':'hidden'):secondNavIndex==2?(item.isEnded?'':'hidden'):''}}" 
+      wx:for="{{managerSignInList}}" 
+      wx:key="index">
+      <singInItem
+        title="{{item.title}}"
+        content="{{item.content}}"
+        isSign="{{0}}"
+        beginTime="{{item.beginTime}}"
+        endTime="{{item.endTime}}"
+        nId="{{item.signId}}"
+        userCount="{{item.userCount}}"
+        userReadCount="{{item.userReadCount}}"
+        userType="{{1}}"
+        isEnded="{{item.isEnded}}"
+        isStarted="{{item.isStarted}}"/>
+    </view>
+  </view>
+  <!-- 添加按钮 -->
+  <view 
+    wx:if="{{userStatus==1}}" 
+    class="addBtn {{firstNavIndex==1?'show':''}}"
+    hover-class="active"
+    hover-start-time="0"
+    hover-stay-time="200"
+    bindtap="addBtnClick">
+    <text class="iconfont icontianjia"></text>
+  </view>
+</view>

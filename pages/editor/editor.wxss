@@ -1,0 +1,54 @@
+@import "/miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss";
+@import "/styles/iconfont.wxss";
+
+.container {
+  width: 100%;
+  height: calc(100vh - 250rpx);
+}
+
+.ql-container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 32rpx;
+  line-height: 1.5;
+  overflow: auto;
+  padding: 20rpx 20rpx 40rpx 20rpx;
+  border-top: 1px solid #ECECEC;
+}
+
+.ql-active {
+  color: #22C704;
+}
+
+.iconfont {
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+  cursor: pointer;
+  font-size: 40rpx;
+  text-align: center;
+}
+
+.toolbar {
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  height: 100rpx;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border-bottom: 1px solid #ECECEC; */
+  border-top: 1px solid #ECECEC;
+}
+.button {
+  padding: 30rpx 40rpx;
+}
+@media screen and (max-height: 500px) {
+  .container {
+    width: 100%;
+    height: calc(100vh - 100rpx);
+  }
+}

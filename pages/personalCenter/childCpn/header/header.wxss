@@ -40,6 +40,15 @@
   text-align: center;
   margin-top: 10rpx;
 }
+button.name {
+  display: block;
+  height: unset;
+  line-height: unset;
+  background-color: transparent;
+}
+button.name::after {
+  display: none;
+}
 .association_Num {
   display: flex;
   margin-top: 40rpx;

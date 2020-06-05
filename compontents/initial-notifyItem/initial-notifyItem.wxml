@@ -1,0 +1,29 @@
+<view class="item">
+  <!-- 图标 -->
+  <view>
+    <view class="icon" style="background-image:{{showStatus?'':iconBgColor}}">
+      <text class="iconfont {{iconClass}}"></text>
+    </view>
+  </view>
+  <!-- 信息 -->
+  <view class="info">
+    <!-- 时间 -->
+    <view class="info-time">{{time}}</view>
+    <!-- 标题 -->
+    <view class="info-title">
+      <view>
+        {{title}}
+      </view>
+      <!-- 状态 -->
+      <view wx:if="{{showStatus}}" class="status">
+        （ {{statusContent}} ）
+      </view>
+    </view>
+    <!-- 内容 -->
+    <view class="info-content">{{content}}</view>
+    <!-- 已读数/未读  -->
+    <view class="info-readedNum" wx:if="{{showReadedNum}}">
+      {{readedNum}}
+    </view>
+  </view>
+</view>

@@ -1,6 +1,7 @@
 <view class="box">
   <view class="title">社团相册</view>
   <view class="pic">
+    <view wx:if="{{!picUrlLists.length}}">无</view>
     <block wx:for="{{picUrlLists}}" wx:key="index"> 
       <image 
         src="{{item}}"

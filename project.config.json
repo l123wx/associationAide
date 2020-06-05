@@ -22,10 +22,11 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useCompilerModule": false
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.11.0",
+	"libVersion": "2.11.1",
 	"appid": "wx888462c7cfb64e31",
 	"projectname": "%E7%A4%BE%E5%9B%A2%E5%B0%8F%E5%8A%A9%E6%89%8B",
 	"debugOptions": {
@@ -60,9 +61,16 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/associationIndex-unjoined/associationIndex-unjoined",
-					"pathName": "pages/associationIndex-unjoined/associationIndex-unjoined",
-					"query": "",
+					"name": "pages/signIn/signIn",
+					"pathName": "pages/signIn/signIn",
+					"query": "id=200&name=网园资讯工作室",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/notify/notify",
+					"pathName": "pages/notify/notify",
+					"query": "id=200&name=网园资讯工作室",
 					"scene": null
 				}
 			]

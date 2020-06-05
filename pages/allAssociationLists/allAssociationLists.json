@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "search":"@vant/weapp/search/index",
-    "list":"./childCpn/list/list"
+    "search":"/@vant/weapp/search/index",
+    "list":"./childCpn/list/list",
+    "emptyHint": "/compontents/emptyHint/emptyHint"
   }
 }

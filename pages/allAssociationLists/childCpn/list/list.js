@@ -15,6 +15,22 @@ Component({
     // 社团简介
     intro: {
       type: String
+    },
+    // 级别名称
+    collegeName: {
+      type: String
+    },
+    // 分类
+    tagsName: {
+      type: String
+    },
+    // 人数
+    personCount: {
+      type: Number
+    },
+    // 社团id
+    aid: {
+      type: Number
     }
   },
 
@@ -29,6 +45,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    // 点击社团时触发
+    listItemClick() {
+      wx.navigateTo({
+        url:"/pages/associationIndex-unjoined/associationIndex-unjoined?id="+this.properties.aid,
+      })
+    },
   }
 })

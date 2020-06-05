@@ -1,21 +1,37 @@
+<!-- 简介 -->
 <view class="{{pageIndex!=0?'hidden':''}}">
   <!-- 社团标签 -->
   <label 
-    peopleNum="10"
-    type="体育运动"
-    level="校级"/>
+    peopleNum="{{associationInfo.personCount}}"
+    type="{{associationInfo.tagsName}}"
+    level="{{associationInfo.collegeName}}"/>
   <!-- 相册 -->
   <album picUrlLists="{{picUrlLists}}"/>
   <!-- 部门分类 -->
   <class classLists="{{classLists}}"/>
   <!-- 联系方式 -->
-  <contact/>
+  <contact
+    phone="{{associationInfo.publicPhone}}"
+    wechat="{{associationInfo.publicWechatCode}}"
+    qqGroup="{{associationInfo.publicQqGroup}}"
+    mail="{{associationInfo.publicMail}}"
+    publicWechatPublicCode="{{associationInfo.publicMail}}"/>
 </view>
+<!-- 展示 -->
 <view class="{{pageIndex!=1?'hidden':''}}">
-  <view class="showRoom">
-    <image mode="widthFix" src="https://7465-text1-a2nyq-1258922599.tcb.qcloud.la/content.jpg?sign=8d10ad9242ca8afd71853ab9ceb03bc6&t=1590428691"></image>
+  <view wx:if="{{associationInfo.communityArticle&&associationInfo.communityArticle.content!=''}}" class="showRoom">
+    {{associationInfo.communityArticle.content}}
+  </view>
+  <view wx:else class="emptyHint">
+  <!-- 没有东西时候的提示 -->
+    <emptyHint statusText="这里什么也没有"/>
   </view>
 </view>
+<!-- 活动 -->
 <view class="{{pageIndex!=2?'hidden':''}}">
-
+  <timeLine wx:if="{{activityLists&&activityLists.length!=0}}" activityLists="{{activityLists}}"/>
+  <view wx:else class="emptyHint">
+  <!-- 没有东西时候的提示 -->
+    <emptyHint statusText="这里什么也没有"/>
+  </view>
 </view>

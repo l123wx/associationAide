@@ -1,0 +1,11 @@
+<view class="box">
+  <!-- 按钮 -->
+  <view 
+    wx:for="{{navItemLists}}" 
+    wx:key="index"
+    data-index="{{index}}"
+    bindtap="click"
+    class="{{activeIndex==index?'active':''}}">
+    {{item.title}}
+  </view>
+</view>

@@ -1,0 +1,15 @@
+<view>
+  <!-- 提醒 -->
+  <view class="{{activeIndex==0?'':'hidden'}}">
+    东西还没放上来
+  </view>
+  <!-- 功能 -->
+  <view class="{{activeIndex==1?'':'hidden'}}">
+    <view class="" bindtap="functionClick">功能</view>
+    <!-- <function /> -->
+  </view>
+  <!-- 我的 -->
+  <view class="{{activeIndex==2?'':'hidden'}}">
+    3
+  </view>
+</view>

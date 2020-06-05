@@ -1,0 +1,6 @@
+<scroll-view scroll-y class="box">
+  <view class="header">
+    <header navItemLists="{{navItemLists}}" bindnavClick="navClick"/>
+  </view>
+  <center activeIndex="{{activeIndex}}"/>
+</scroll-view>

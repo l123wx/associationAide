@@ -4,6 +4,8 @@
     "label": "../label/label",
     "album": "../album/album",
     "class": "../class/class",
-    "contact": "../contact/contact"
+    "contact": "../contact/contact",
+    "timeLine": "/compontents/timeLine/timeLine",
+    "emptyHint": "/compontents/emptyHint/emptyHint"
   }
 }

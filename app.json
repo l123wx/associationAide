@@ -3,7 +3,10 @@
     "pages/allAssociationLists/allAssociationLists",
     "pages/myAssociationLists/myAssociationLists",
     "pages/personalCenter/personalCenter",
-    "pages/associationIndex-unjoined/associationIndex-unjoined"
+    "pages/associationIndex-unjoined/associationIndex-unjoined",
+    "pages/associationIndex-joined/associationIndex-joined",
+    "pages/notify/notify",
+    "pages/signIn/signIn"
   ],
   "window": {
     "backgroundTextStyle": "light",

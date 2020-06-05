@@ -1,3 +1,8 @@
 <!--index.wxml-->
 <view class="container">
+  <picUploader
+  file-list="{{ fileList }}"
+  max-count="3"
+  bind:after-read="afterRead"
+/>
 </view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "header": "/compontents/nav/nav",
+    "second-nav": "/compontents/second-nav/second-nav",
+    "notifyItem": "/compontents/notifyItem/notifyItem"
+  },
+  "navigationBarTitleText": "通知"
+}

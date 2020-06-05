@@ -1,25 +1,44 @@
-// pages/allAssociation/allAssociation.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    allAssociationLists: [],
+    searchValue: '',
   },
-
+  // 搜索框搜索时调用
+  onSearch(){
+    app.getAllAssociationLists(this.data.searchValue);
+  },
+  // 搜索框内容改变时调用
+  onChange(e){
+    this.setData({
+      searchValue: e.detail,
+    });
+    if(this.data.searchValue == ''){
+      app.getAllAssociationLists();
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.setData({
+      allAssociationLists: app.globalData.allAssociationLists || []
+    })
+    app.AssociationListsReadyCallback = () => {
+      this.setData({
+        allAssociationLists: app.globalData.allAssociationLists || []
+      })
+    };
   },
 
   /**

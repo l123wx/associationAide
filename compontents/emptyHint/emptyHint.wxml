@@ -1,0 +1,6 @@
+<view class="box">
+  <image wx:if="{{bgType==1}}" src="/assets/images/emptyHint/photo_1.png" mode="widthFix"></image>
+  <image wx:else src="/assets/images/emptyHint/photo_2.png" mode="widthFix"></image>
+  <view class="statusWord">{{statusText}}</view>
+  <view class="button" bindtap="click" wx:if="buttonText">{{buttonText}}</view>
+</view>

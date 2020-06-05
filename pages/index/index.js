@@ -6,9 +6,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    fileList: [
+      {
+        url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        statue: 'dnoe',
+      },
+    ],
   },
+  afterRead(e) {
+    const { file } = e.detail;
+    console.log( file );
+    let a = this.data.fileList;
+    a.push({url:file.path,status:'done'});
+    this.setData({
+      fileList: a
+    })
 
+    wx.uploadFile({
+      url: 'https://stzs.smtboy.com/api/community/testFormDataUpload', 
+      filePath: file.path,
+      name: 'file',
+      header:{
+        "token": "n6oPDtxL4P3tZSWg8PiCSg==",
+        "Content-Type": "multipart/form-data"  
+      },
+      success: res => {
+        // 上传完成需要更新 fileList
+        // const { fileList = [] } = res.data;
+        // fileList.push({ ...file, url: res.data });
+        // this.setData({ fileList });
+        console.log(res)
+      },
+      fail: err => {
+        console.log(err)
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

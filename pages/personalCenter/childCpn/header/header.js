@@ -19,6 +19,10 @@ Component({
     // 可管理的社团数量
     manageNum: {
       type: Number
+    },
+    //用户是否已登陆
+    userLogined: {
+      type: Boolean
     }
   },
 
@@ -33,6 +37,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    login() {
+      this.triggerEvent('login', {}, {})
+    }
   }
 })

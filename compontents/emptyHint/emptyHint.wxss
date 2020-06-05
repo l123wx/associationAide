@@ -1,0 +1,20 @@
+.box {
+  text-align: center;
+}
+image {
+  width:233rpx;
+}
+.statusWord {
+  font-size: 30rpx;
+  line-height: 30rpx;
+  color: #b5b5b5;
+  margin-top: 16rpx;
+}
+.button {
+  font-size: 26rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #61b6fd;
+  margin-top: 8rpx;
+  display: inline-block;
+}

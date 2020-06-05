@@ -1,12 +1,14 @@
-// pages/associationIndex-unjoined/associationIndex-unjoined.js
+const app = getApp();
+import request from '../../service/network' //导入request
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     // 定位现在的页面：简介：0 | 展示：1 | 活动：2
-    pageIndex: 0
+    pageIndex: 0,
+    // 社团信息
+    associationInfo: {},
   },
   // 点击导航栏的按钮触发
   navClick(e) {
@@ -18,7 +20,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    request({
+      url: '/community/getOneCommunityInfo',
+      data: {cId:options.id}
+    }).then(res=>{
+      this.setData({
+        associationInfo: res.data
+      })
+      wx.setNavigationBarTitle({
+        title: res.data.name
+      })
+    })
   },
 
   /**

@@ -1,0 +1,8 @@
+.box {
+  background-color: #fff;
+  /* border-radius: 20rpx; */
+  /* box-shadow: 0px 1px 43px 0px rgba(97, 161, 252, 0.06); */
+  /* width: calc(100% - 50rpx); */
+  /* padding: 0 18rpx; */
+  /* margin: 15rpx auto 0; */
+}

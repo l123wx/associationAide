@@ -1,9 +1,11 @@
 <scroll-view scroll-y class="box">
-  <header avatarSrc="https://i1.hdslb.com/bfs/face/841571ea26d90a589bbd25c3f6d558da9070fbd5.jpg@45w_45h_1c_100q.webp"
-          username="蟑螂恶霸"
+  <header avatarSrc="{{avatarUrl}}"
+          username="{{username}}"
           joinedNum="2"
-          manageNum="1"/>
-  <view class="infoLists">
+          manageNum="1"
+          userLogined="{{userLogined}}"
+          bindlogin="login"/>
+  <view class="infoLists" wx:if="{{userLogined}}">
     <list wx:for="{{infoList}}" 
           wx:key="index"
           title="{{item.title}}"

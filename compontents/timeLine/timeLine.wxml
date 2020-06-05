@@ -1,0 +1,18 @@
+<view class="box">
+  <block wx:for="{{activityLists}}" wx:for-index="activityYearIndex" wx:for-item="activityYearItem" wx:key="activityYearIndex">
+    <block wx:for="{{activityYearItem.data}}" wx:for-index="activityMonthIndex" wx:for-item="activityMonthItem" wx:key="activityMonthIndex">
+      <activityItem
+        wx:for="{{activityMonthItem.data}}"
+        wx:for-index="index"
+        wx:for-item="item"
+        wx:key="index"
+        title="{{item.title}}"
+        content="{{item.content}}"
+        beginTime="{{item.beginTime}}"
+        endTime="{{item.endTime}}"
+        month="{{activityMonthItem.month}}"
+        year="{{activityYearItem.year}}"
+        showTime="{{index==0}}"/>
+    </block>
+  </block>
+</view>

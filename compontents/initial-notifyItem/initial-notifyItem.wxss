@@ -1,0 +1,86 @@
+@import "/styles/iconfont.wxss";
+.item {
+  background-color: transparent;
+  width: 100%;
+  min-height: 160rpx;
+}
+.item>view {
+  display: inline-block;
+  vertical-align: top;
+}
+/* 图标 */
+.item>view>.icon {
+  height: 71rpx;
+  width: 71rpx;
+  border-radius: 50%;
+  background-color: #a5a5a6;
+  line-height: 71rpx;
+  text-align: center;
+  margin-top: 28rpx;
+}
+/* 背景颜色渐变 */
+/* 收集 */
+.item>view>.upLoad-icon {
+  background-image: linear-gradient(to bottom, #ff5482 0%, #ff726d 100%);
+}
+/* icon渐变 */
+.item>view>.icon>text {
+  background-image: linear-gradient(to right, #fff 0%, rgba(255,255,255,0.4) 90%, rgba(255,255,255,0.2) 100%);
+  font-size: 32rpx;
+  -webkit-background-clip: text;
+  background-clip: text;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  -moz-box-decoration-break: clone;
+  color: transparent;
+  position:relative;
+}
+/* 信息 */
+.info {
+  width: calc(100% - 93rpx);
+  margin: 28rpx 0 35rpx 20rpx;
+}
+/* 时间 */
+.info-time {
+  color: #b5b5b5;
+  font-size: 22rpx;
+  line-height: 22rpx;
+  text-align: right;
+}
+/* 标题 */
+.info-title {
+  color: #626262;
+  font-size: 30rpx;
+  line-height: 30rpx;
+}
+.info-title>view:nth-child(1) {
+  max-width: calc(100% - 210rpx);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+/* 状态 */
+.status {
+  color: #b5b5b5;
+  display: inline-block;
+  vertical-align: top;
+}
+/* 内容 */
+.info-content {
+  width: calc(100% - 20rpx);
+  margin-top: 21rpx;
+  color: #959595;
+  font-size: 22rpx;
+  line-height: 22rpx;
+  overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+/* 已读人数/未读 */
+.info-readedNum {
+  color: #61b6fd;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  margin-top: 27rpx;
+}
