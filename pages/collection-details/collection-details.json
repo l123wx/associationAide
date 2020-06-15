@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "field": "/miniprogram_npm/@vant/weapp/field/index",
+    "notify": "/miniprogram_npm/@vant/weapp/notify/index"
+  }
+}

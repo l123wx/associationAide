@@ -1,0 +1,30 @@
+.header {
+  width: 700rpx;
+  margin: 35rpx auto 0;
+  height: 28rpx;
+}
+.header>view {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+.header>view:nth-child(1) {
+  color: #959595;
+}
+.header>view:nth-child(2) {
+  color: #61a0fc;
+  float: right;
+}
+.itemBox {
+  border-radius: 20rpx;
+  box-shadow: 0px 1px 43px 0px rgba(97, 161, 252, 0.06);
+  width: 674rpx;
+  padding: 0 18rpx;
+  margin: 15rpx auto 0;
+  background-color: #fff;
+  transition: background-color .2s;
+}
+.itemBox:active {
+  background-color: #f3f3f3;
+}

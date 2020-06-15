@@ -1,6 +1,13 @@
 <scroll-view scroll-y class="box">
   <view class="header">
-    <header navItemLists="{{navItemLists}}" bindnavClick="navClick"/>
+    <header 
+      navItemLists="{{navItemLists}}" 
+      bindnavClick="navClick" 
+      index="{{activeIndex}}"/>
   </view>
-  <center activeIndex="{{activeIndex}}"/>
+  <center 
+    activeIndex="{{activeIndex}}" 
+    allCommunityActivityVos="{{allCommunityActivityVos}}"
+    communityReminds="{{communityReminds}}"
+    userInfoList="{{userInfoList}}"/>
 </scroll-view>

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "loginBox": "/compontents/login/login"
+  }
+}

@@ -1,5 +1,4 @@
 // pages/associationIndex-unjoined/childCpn/content/content.js
-import {activityClassify} from "../../../../utils/util"
 Component({
   /**
    * 组件的属性列表
@@ -19,8 +18,7 @@ Component({
    */
   data: {
     picUrlLists: [],
-    classLists: [],
-    activityLists: []
+    classLists: []
   },
   observers: {
     associationInfo(newVal){
@@ -34,12 +32,9 @@ Component({
       for(var item in newVal.communityDepartments){
         classLists.push(newVal.communityDepartments[item].name);
       }
-      // 从社团信息中把活动列表的格式整理一下
-      const activityLists = activityClassify(newVal.allCommunityActivityVos);
       this.setData({
         picUrlLists,
-        classLists,
-        activityLists
+        classLists
       })
     }
   },

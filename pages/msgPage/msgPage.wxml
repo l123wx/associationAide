@@ -1,0 +1,60 @@
+<!-- 导出成功页面 -->
+<view class="box" wx:if="{{type == 0}}">
+  <!-- icon -->
+  <view class="iconfont iconxuanzhong"></view>
+  <!-- 标题 -->
+  <view class="title">导出成功</view>
+  <!-- 描述 -->
+  <view class="intro">{{link}}</view>
+  <!-- 按钮 -->
+  <view class="button" bindtap="copyLink" hover-class="active" hover-start-time="0" hover-stay-time="200">复制下载链接</view>
+  <!-- 底部文本 -->
+  <view class="bottom_text">
+    <view>请复制链接到浏览器下载</view>
+    <view>链接将在24小时后失效</view>
+  </view>
+</view>
+<!-- 创建社团成功 -->
+<view class="box" wx:if="{{type == 1}}">
+  <!-- icon -->
+  <view class="iconfont iconxuanzhong"></view>
+  <!-- 标题 -->
+  <view class="title">创建成功</view>
+  <!-- 描述 -->
+  <view class="intro">https://mjlr-file.smtboy.com/stzs/excel/collect/1590843944000一个通知.xlsx</view>
+  <!-- 按钮 -->
+  <view class="button">复制下载链接</view>
+  <!-- 底部文本 -->
+  <view class="bottom_text">
+    <view>请复制链接到浏览器下载</view>
+    <view>链接将在24小时后失效</view>
+  </view>
+</view>
+<!-- 邀请成员进入社团 -->
+<view class="box" wx:if="{{type == 2}}">
+  <!-- 社团头像 -->
+  <image src="{{logoUrl}}" class="avatar"></image>
+  <!-- 标题 -->
+  <view class="title">{{associationName}}</view>
+  <!-- 描述 -->
+  <view class="intro">
+    <view>请点击下方按钮将邀请转发到微信</view>
+    <view>邀请朋友进入社团</view>
+  </view>
+  <!-- 按钮 -->
+  <button class="button" open-type="share">转发到微信</button>
+</view>
+<!-- 申请加入社团成功 -->
+<view class="box" wx:if="{{type == 3}}">
+  <!-- icon -->
+  <view class="iconfont iconxuanzhong"></view>
+  <!-- 标题 -->
+  <view class="title">申请成功</view>
+  <!-- 描述 -->
+  <view class="intro">
+    <view>您的申请已提交</view>
+    <view>请等待管理员审核</view>
+  </view>
+  <!-- 按钮 -->
+  <view class="button" bindtap="toHome">返回首页</view>
+</view>

@@ -1,0 +1,56 @@
+<!-- 提醒 -->
+<view>
+  <!-- 头部 -->
+  <view class="header">
+    <!-- 标题 -->
+    <view>提醒</view>
+    <!-- 查看更多按钮 -->
+    <!-- <view bindtap="toAllReminds">{{communityReminds.length-4>0?'查看全部('+communityReminds.length+')':''}}</view> -->
+    <view bindtap="toAllReminds">{{communityReminds.length-4>=0?'查看全部':''}}</view>
+  </view>
+  <!-- 内容显示部分 -->
+  <view class="content">
+    <block wx:for="{{communityReminds}}" wx:key="index" wx:if="{{index<4}}">
+      <!-- 签到 -->
+      <view class="itemBox" wx:if="{{item.remindType==0}}">
+        <signInItem
+          title="{{item.title}}"
+          content="{{item.content}}"
+          beginTime="{{item.beginTime}}"
+          sId="{{item.id}}"/>
+      </view>
+      <!-- 通知 -->
+      <view class="itemBox" wx:if="{{item.remindType==1}}">
+        <notifyItem
+          title="{{item.title}}"
+          content="{{item.content}}"
+          beginTime="{{item.beginTime}}"
+          nId="{{item.id}}"/> 
+      </view>
+      <!-- 收集 -->
+      <view class="itemBox" wx:if="{{item.remindType==2}}">
+        <collectionItem
+          title="{{item.title}}"
+          content="{{item.content}}"
+          beginTime="{{item.beginTime}}"
+          cId="{{item.id}}"/>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- 活动 -->
+<view>
+  <!-- 头部 -->
+  <view class="header">
+    <!-- 标题 -->
+    <view>活动</view>
+    <!-- 查看更多按钮 -->
+    <view bindtap="moreActivity">查看全部</view>
+  </view>
+  <!-- 内容显示部分 -->
+  <view class="content">
+    <block>
+      <timeLine activityLists="{{allCommunityActivityVos}}"/>
+    </block>
+  </view>
+</view>

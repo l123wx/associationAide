@@ -31,7 +31,7 @@ Component({
       type: String
     },
     // 通知id
-    nId: {
+    sId: {
       type: String
     },
     // 用户类型 1管理员 0普通成员
@@ -61,15 +61,21 @@ Component({
    */
   methods: {
     notifyItemClick() {
-      console.log("id为"+this.properties.nId+"的签到被点了");
+      console.log("id为"+this.properties.sId+"的签到被点了");
+      wx.navigateTo({
+        url: '/pages/signIn-details/signIn-details?sId='+this.properties.sId
+      })
     }
   },
   lifetimes: {
     ready() {
-      const time = getMonthAndDay(this.properties.beginTime)+" - "+getMonthAndDay(this.properties.endTime);
-      this.setData({
-        time
-      })
+      if( this.properties.endTime=="" || this.properties.beginTime==this.properties.endTime ){
+        const time = getMonthAndDay(this.properties.beginTime);
+        this.setData({time})
+      }else{
+        const time = getMonthAndDay(this.properties.beginTime)+" - "+getMonthAndDay(this.properties.endTime);
+        this.setData({time})
+      }
     }
   }
 })

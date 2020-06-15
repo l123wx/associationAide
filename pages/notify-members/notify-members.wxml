@@ -1,0 +1,40 @@
+<!-- 参与成员列表 -->
+<view>
+  <header
+    navItemLists="{{navItemList}}" 
+    bindnavClick="navClick"/>
+  <!-- 已读 -->
+  <view class="{{navActiveIndex==0?'':'hidden'}}">
+    <view class="userItem"
+      wx:for="{{userList.readed}}"
+      wx:key="index">
+      <!-- 头像 -->
+      <view class="avatar">
+        <image src="{{item.avatarUrl}}"></image>
+      </view>
+      <view class="info">
+        <!-- 姓名 -->
+        <view>{{item.userStuName}}</view>
+        <!-- 已读时间 -->
+        <view>{{item.readTime}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 未读 -->
+  <view class="{{navActiveIndex==1?'':'hidden'}}">
+    <view class="userItem"
+      wx:for="{{userList.unread}}"
+      wx:key="index">
+      <!-- 头像 -->
+      <view class="avatar">
+        <image src="{{item.avatarUrl}}"></image>
+      </view>
+      <view class="info">
+        <!-- 姓名 -->
+        <view>{{item.userStuName}}</view>
+        <!-- 签到时间 -->
+        <view>未读</view>
+      </view>
+    </view>
+  </view>
+</view>

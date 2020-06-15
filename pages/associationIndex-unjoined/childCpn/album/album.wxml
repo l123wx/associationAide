@@ -2,7 +2,7 @@
   <view class="title">社团相册</view>
   <view class="pic">
     <view wx:if="{{!picUrlLists.length}}">无</view>
-    <block wx:for="{{picUrlLists}}" wx:key="index"> 
+    <block wx:for="{{picUrlLists}}" wx:key="index" wx:if="{{index<3}}"> 
       <image 
         src="{{item}}"
         mode="aspectFill"

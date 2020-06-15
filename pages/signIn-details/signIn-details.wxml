@@ -1,0 +1,78 @@
+<loginBox show="{{showLoginBox}}" bindhidden="hiddenLoginBox"/>
+<van-notify id="van-notify" />
+<scroll-view scroll-y class="box">
+  <view class="_box">
+    <!-- 内容部分 -->
+    <view class="middle">
+      <!-- 标题 -->
+      <view class="title">{{signInInfo.title}}</view>
+      <!-- 相关信息 -->
+      <view class="info">
+        <!-- 发起人 -->
+        <view class="creater">发起人：{{signInInfo.uName}}</view>
+        <!-- 发起时间 -->
+        <view class="create_time">发起时间：{{signInInfo.createTime}}</view>
+      </view>
+      <!-- 内容 -->
+      <view class="content">{{signInInfo.content}}</view>
+      <!-- 时间 -->
+      <view class="time" wx:if="{{signInInfo.beginTime}}">
+        <text class="iconfont iconshijian"></text>
+        <view>{{signInInfo.time}}</view>
+      </view>
+      <!-- 地点 -->
+      <view class="address">
+        <text class="iconfont icondidian"></text>
+        <view>{{signInInfo.place}}</view>
+      </view>
+    </view>
+    <!-- 已签人数 -->
+    <view 
+      class="readed" 
+      hover-class="active" 
+      hover-start-time="0" 
+      hover-stay-time="200"
+      bindtap="toReaderList">
+      <!-- 头像列表 -->
+      <view class="avatarLists">
+        <block wx:for="{{readedUserLists}}" wx:key="index" wx:if="{{index<3}}">
+          <image class="avatar" src="{{item.avatarUrl}}"></image>
+        </block>
+      </view>
+      <!-- 已签人数 -->
+      <view class="people_num">
+        <view>{{signInInfo.userReadCount==signInInfo.userCount?'全部已签':"已签"+signInInfo.userReadCount+"/"+signInInfo.userCount+"人"}}</view>
+        <text class="iconfont iconjiantouxiadown"></text>
+      </view>
+    </view>
+    <!-- 功能 -->
+    <view class="function" wx:if="{{userStatus==1}}">
+      <!-- 功能栏目 -->
+      <view>
+        <!-- 标题 -->
+        <view class="title">功能</view>
+        <!-- 功能 -->
+        <view class="function_box">
+          <!-- 每个功能的盒子 -->
+          <button 
+            class="function_item"  
+            wx:for="{{functions}}"
+            wx:key="index"
+            data-name="{{item.name}}"
+            bindtap="functionClick"
+            open-type="{{item.name=='分享到群聊'?'share':''}}">
+            <!-- icon -->
+            <view class="icon">
+              <text style="background-image:{{item.iconColor}}" class="iconfont {{item.iconClass}}"></text>
+            </view>
+            <!-- 功能名称 -->
+            <view class="name">{{item.name}}</view>
+          </button> 
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 按钮 -->
+  <button wx:if="{{isSignIn}}" class="button isSignIn">已签</button>
+  <button wx:else class="button" bindtap="scanCode">扫码签到</button>
+</scroll-view>

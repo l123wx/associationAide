@@ -1,0 +1,74 @@
+<loginBox show="{{showLoginBox}}" bindhidden="hiddenLoginBox"/>
+<scroll-view scroll-y class="box">
+  <view class="_box">
+    <!-- 内容部分 -->
+    <view class="middle">
+      <!-- 标题 -->
+      <view class="title">{{notifyInfo.title}}</view>
+      <!-- 相关信息 -->
+      <view class="info">
+        <!-- 发起人 -->
+        <view class="creater">发起人：{{notifyInfo.uName}}</view>
+        <!-- 发起时间 -->
+        <view class="create_time">发起时间：{{notifyInfo.createTime}}</view>
+      </view>
+      <!-- 内容 -->
+      <view class="content">{{notifyInfo.content}}</view>
+      <!-- 时间 -->
+      <view class="time" wx:if="{{notifyInfo.beginTime}}">
+        <text class="iconfont iconshijian"></text>
+        <view>{{notifyInfo.time}}</view>
+      </view>
+      <!-- 地点 -->
+      <view class="address">
+        <text class="iconfont icondidian"></text>
+        <view>{{notifyInfo.place}}</view>
+      </view>
+    </view>
+    <!-- 已读人数 -->
+    <view class="readed" 
+      hover-class="active" 
+      hover-start-time="0"
+      hover-stay-time="200"
+      bindtap="toReaderList">
+      <!-- 头像列表 -->
+      <view class="avatarLists">
+        <block wx:for="{{readedUserLists}}" wx:key="index" wx:if="{{index<3}}">
+          <image class="avatar" src="{{item.avatarUrl}}"></image>
+        </block>
+      </view>
+      <!-- 已读人数 -->
+      <view class="people_num">
+        <view>{{notifyInfo.userReadCount==notifyInfo.userCount?'全部已读':"已读"+notifyInfo.userReadCount+"/"+notifyInfo.userCount+"人"}}</view>
+        <text class="iconfont iconjiantouxiadown"></text>
+      </view>
+    </view>
+    <!-- 功能 -->
+    <view class="function" wx:if="{{userStatus==1}}">
+      <!-- 功能栏目 -->
+      <view>
+        <!-- 标题 -->
+        <view class="title">功能</view>
+        <!-- 功能 -->
+        <view class="function_box">
+          <!-- 每个功能的盒子 -->
+          <view 
+            class="function_item"  
+            wx:for="{{functions}}"
+            wx:key="index"
+            data-name="{{item.name}}"
+            bindtap="functionClick">
+            <!-- icon -->
+            <view class="icon">
+              <text style="background-image:{{item.iconColor}}" class="iconfont {{item.iconClass}}"></text>
+            </view>
+            <!-- 功能名称 -->
+            <view class="name">{{item.name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 按钮 -->
+  <button open-type="share" class="button">分享到群聊</button>
+</scroll-view>

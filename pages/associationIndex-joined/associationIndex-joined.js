@@ -1,4 +1,5 @@
-import request from '../../service/network'; 
+import request from '../../service/network';
+const app = getApp();
 Page({
   /**
    * 页面的初始数据
@@ -19,25 +20,51 @@ Page({
       },
     ],
     activeIndex: 0,
+    // 活动列表
+    allCommunityActivityVos: [],
+    // 提醒列表
+    communityReminds: [],
+    userInfoList: {}
   },
+  
   //点击导航栏触发
   navClick(e) {
     this.setData({
       activeIndex: e.detail
     })
   },
+  // 获取社团相关信息
+  getAssociationInfo() {
+    request({
+      url: '/community/enterCommunityPanel',
+      data: {cId:app.globalData.associationInfo.id}
+    }).then(res=>{
+      console.log(res)
+      let userInfoList = {
+        departement: res.data.departementName,
+        userName: res.data.realName,
+        status: res.data.status
+      }
+      this.setData({
+        allCommunityActivityVos: res.data.allCommunityActivityVos,
+        communityReminds: res.data.communityReminds,
+        userInfoList
+      })
+      // 将该用户在该社团内的身份类型记录到全局变量
+      app.globalData.associationInfo.userStatus = res.data.status;
+      console.log()
+      // console.log(allCommunityActivityVos,communityReminds)
+      if(app.getAssociationInfoCallBack){
+        app.getAssociationInfoCallBack();
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    wx.setNavigationBarTitle({title:options.name})
-    request({
-      url: '/community/enterCommunityPanel',
-      data: {cId:options.id}
-    }).then(res=>{
-      console.log(res)
-    })
+    wx.setNavigationBarTitle({title:app.globalData.associationInfo.name})
+    this.getAssociationInfo();
   },
 
   /**

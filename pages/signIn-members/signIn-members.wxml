@@ -1,0 +1,58 @@
+<!-- 参与成员列表 -->
+<view>
+  <header
+    navItemLists="{{navItemList}}" 
+    bindnavClick="navClick"/>
+  <!-- 已签到 -->
+  <view class="{{navActiveIndex==0?'':'hidden'}}">
+    <view class="userItem"
+      wx:for="{{userList.readed}}"
+      wx:key="index">
+      <!-- 头像 -->
+      <view class="avatar">
+        <image src="{{item.avatarUrl}}"></image>
+      </view>
+      <view class="info">
+        <!-- 姓名 -->
+        <view>{{item.userStuName}}</view>
+        <!-- 签到时间 -->
+        <view>{{item.readTime}}</view>
+      </view>
+      <!-- 更多 按钮 -->
+      <view 
+        class="moreBtn"
+        bindtap="moreBtn"
+        data-id="{{item.userId}}"
+        data-isSignIn="{{item.isSignIn}}"
+        data-leaveContent="{{item.leaveContent}}">
+        <text class="iconfont iconcaidan"></text>
+      </view>
+    </view>
+  </view>
+  <!-- 未签到 -->
+  <view class="{{navActiveIndex==1?'':'hidden'}}">
+    <view class="userItem"
+      wx:for="{{userList.unread}}"
+      wx:key="index">
+      <!-- 头像 -->
+      <view class="avatar">
+        <image src="{{item.avatarUrl}}"></image>
+      </view>
+      <view class="info">
+        <!-- 姓名 -->
+        <view>{{item.userStuName}}</view>
+        <!-- 签到状态、请假理由 -->
+        <view>{{item.isSignIn==0?'未签':(item.leaveContent!=''?item.leaveContent:'已请假，未填写请假原因')}}</view>
+      </view>
+      <!-- 更多 按钮 -->
+      <view 
+        class="moreBtn"
+        bindtap="moreBtn"
+        data-id="{{item.userId}}"
+        data-isSignIn="{{item.isSignIn}}"
+        data-leaveContent="{{item.leaveContent}}">
+        <text class="iconfont iconcaidan"></text>
+      </view>
+    </view>
+  </view>
+</view>

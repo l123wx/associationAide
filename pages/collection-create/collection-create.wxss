@@ -1,0 +1,93 @@
+@import '/styles/iconfont.wxss';
+.hidden {
+  display: none;
+}
+page {
+  background-color: #eee;
+}
+.header.header {
+  background-color: #eee;
+  font-size: 24rpx;
+  color: #626262;
+  height: 54rpx;
+  line-height: 54rpx;
+  padding-left: 26rpx;
+}
+.box {
+  margin: 20rpx 0;
+  min-height: 980rpx;
+}
+.box>view {
+  background-color: #fff;
+}
+.title,
+.collectionList,
+.place {
+  margin-bottom: 17rpx;
+}
+/* 收集列表 */
+.collection_item {
+  padding: 20rpx 0 20rpx 30rpx;
+  display: flex;
+}
+.collection_item>view {
+  text-align: right;
+  width: 308rpx;
+  color: #959595;
+  font-size: 26rpx;
+  line-height: 44rpx;
+}
+.collection_item>.iconfont {
+  font-size: 30rpx;
+  line-height: 44rpx;
+  margin-left: 30rpx;
+  color: #b6b6b6;
+}
+.collection_item>input {
+  width: 320rpx;
+  color: #000;
+  font-size: 26rpx;
+}
+.add_collection_btn {
+  height: 66rpx;
+  width: 708rpx;
+  margin: 14rpx auto 30rpx;
+  border: 1px dashed #a0a0a0;
+  border-radius: 11rpx;
+  background-color: #eee !important;
+  line-height: 66rpx;
+  font-size: 26rpx;
+  color: #959595;
+}
+.add_collection_btn>.iconfont {
+  margin: 0 20rpx;
+}
+.add_collection_btn>text:nth-child(2){
+  position: relative;
+  top: -2rpx;
+}
+
+.van-field__input.van-field__input--textarea {
+  height: 240rpx !important;
+}
+.iconfont.icontianjia1{
+  font-size: 46rpx;
+  position: relative;
+  top: 4rpx;
+}
+/* 按钮 */
+.button.button {
+  width: 710rpx;
+  background-color: #61b6fd;
+  text-align: center;
+  height: 82rpx;
+  line-height: 82rpx;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  color: #fff;
+  padding: 0;
+  margin: 80rpx auto 43rpx;
+}
+.button.unable{
+  background-color: #b5b5b5;
+}

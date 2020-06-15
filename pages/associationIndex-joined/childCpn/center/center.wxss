@@ -1,3 +1,7 @@
 .hidden {
   display: none;
 }
+.function {
+  height: calc(100vh - 66rpx);
+  background-color: #fff;
+}

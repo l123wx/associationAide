@@ -1,0 +1,12 @@
+<dialog
+  use-slot
+  title="{{title}}"
+  show="{{show}}"
+  show-cancel-button
+  bind:confirm="confirmBtnClick"
+  bind:cancel="cancelBtnClick">
+  <input 
+    placeholder="请输入{{title}}"
+    value="{{value}}" 
+    bindinput="inputChange"/>
+</dialog>

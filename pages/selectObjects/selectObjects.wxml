@@ -1,0 +1,30 @@
+<van-index-bar index-list="{{genderInitArray}}">
+  <view>
+    <view 
+      style="padding:28rpx 26rpx;background-color:#fff"
+      bindtap="chooseGroup"
+    >
+      选择一个组
+    </view>
+  </view>
+  <view wx:for="{{userListByGenderInit}}" wx:key="index" wx:if="{{item.length!=0}}">
+    <van-index-anchor index="{{index}}" class="index_anchor"/>
+    <block wx:for="{{item}}" wx:key="index">
+      <van-checkbox 
+        value="{{checkedArray[item.id]}}"
+        bindtap="clickUserLists"
+        data-id="{{item.id}}"
+        checked-color="#61b6fd"
+        class="van_checkbox"
+      >
+        <view 
+          class="infoList_box"
+          data-id="{{item.id}}"
+        >
+          <image src="{{item.avatarUrl}}"></image>
+          <text>{{item.stuName}}</text>
+        </view>
+      </van-checkbox>
+    </block>
+  </view>
+</van-index-bar>

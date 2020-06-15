@@ -1,0 +1,39 @@
+page {
+  background-color: #eee;
+}
+.index_anchor {
+  background-color: #eee;
+}
+.van-index-anchor.van-index-anchor--active.van-hairline--bottom {
+  background-color: #eee;
+}
+
+.van_checkbox {
+  background-color: #fff;
+  padding-left: 26rpx;
+  display: block;
+}
+.infoList_box {
+  padding: 15rpx 0;
+  background-color: #fff;
+}
+.infoList_box image {
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 50%;
+  margin-bottom: -9rpx
+}
+.infoList_box text {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 32rpx;
+  margin-top: 18rpx;
+  font-size: 30rpx;
+  color: #000;
+}
+.infoList_box .border {
+  height: 1rpx;
+  width: 100%;
+  background-color: #eee;
+  margin-top: 15rpx;
+}

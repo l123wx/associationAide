@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "singInItem": "/compontents/signInItem/signInItem",
+    "signInItem": "/compontents/signInItem/signInItem",
     "header": "/compontents/nav/nav",
     "second-nav": "/compontents/second-nav/second-nav"
   },

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "collectionItem": "/compontents/collectionItem/collectionItem",
+    "header": "/compontents/nav/nav",
+    "second-nav": "/compontents/second-nav/second-nav"
+  },
+  "navigationBarTitleText": "收集"
+}

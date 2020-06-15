@@ -1,0 +1,80 @@
+@import '/styles/iconfont.wxss';
+.userItem {
+  position: relative;
+}
+.userItem>view:not(.btn_box) {
+  background-color: #fff;
+  padding: 30rpx 20rpx 20rpx 40rpx;
+  position: relative;
+  z-index: 1;
+  transition: left .5s;
+  border-bottom: 1px solid #e5e5e5;
+  left: 0;
+}
+.userItem.active>view:not(.btn_box) {
+  left: -300rpx;
+}
+.userItem>view>view {
+  display: inline-block;
+  vertical-align: top;
+}
+.userItem>view>.avatar>image {
+  height: 87rpx;
+  width: 87rpx;
+  border-radius: 50%;
+  background-color: #eee;
+}
+.userItem>view>.info {
+  margin-left: 25rpx;
+  width: 500rpx;
+}
+.userItem>view>.info>view:nth-child(1){
+  font-size: 28rpx;
+  line-height: 30rpx;
+  color: #000000;
+  margin-top: 10rpx;
+}
+.userItem>view>.info>view:nth-child(2){
+  font-size: 24rpx;
+  line-height: 32rpx;
+  color: #959595;
+  margin-top: 6rpx;
+}.userItem>view>.moreBtn {
+  float: right;
+  color: #bfbfbf;
+  line-height: 84rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.userItem>.btn_box {
+  width: 300rpx;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+.userItem>.btn_box>view {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  background-color: #fff;
+  margin: 22rpx 0 0 36rpx;
+  position: relative;
+  color: #fff;
+  transition: left .5s;
+}
+.userItem>.btn_box>view:nth-child(1) {
+  background-color: #61b6fd;
+  left: 264rpx;
+}
+.userItem>.btn_box>view:nth-child(2) {
+  background-color: #e81d2d;
+  left: 130rpx;
+}
+.userItem.active>.btn_box>view {
+  left: 0;
+}

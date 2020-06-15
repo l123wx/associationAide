@@ -1,4 +1,5 @@
 import request from "../../service/network";
+const app = getApp();
 Page({
 
   /**
@@ -50,9 +51,7 @@ Page({
     // 作为普通成员的签到列表
     userSignInList: [],
     // 作为管理员的签到列表
-    managerSignInList: [],
-    // 社团id
-    id: -1,
+    managerSignInList: []
   },
   // 点击一级导航栏时触发
   firstNavClick(e) {
@@ -71,6 +70,9 @@ Page({
   // 点击添加按钮时触发
   addBtnClick() {
     console.log("发布新通知")
+    wx.navigateTo({
+      url: '/pages/signIn-create/signIn-create',
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -78,31 +80,37 @@ Page({
   onLoad: function (options) {
     request({
       url: "/communitySignIn/getUserAllSignInCommunity",
-      data: {cId:options.id}
+      data: {cId:app.globalData.associationInfo.id}
     }).then(res=>{
       // 在签到列表中添加 是否开始 和 是否结束 的属性
       console.log(res)
       const today = new Date();
       const managerSignInList = function(){
         for(var i in res.data.managerSignInList){
-          res.data.managerSignInList[i].isStarted = new Date(res.data.managerSignInList[i].beginTime)<=today;
-          res.data.managerSignInList[i].isEnded = new Date(res.data.managerSignInList[i].endTime)<today;
+          let beginDate = new Date(res.data.managerSignInList[i].beginTime.substr(0, 19));
+          beginDate.setHours(beginDate.getHours()+8);
+          let endDate = new Date(res.data.managerSignInList[i].endTime.substr(0, 19));
+          endDate.setHours(endDate.getHours()+8);
+          res.data.managerSignInList[i].isStarted = beginDate<=today;
+          res.data.managerSignInList[i].isEnded = endDate<today;
         }
         return res.data.managerSignInList
       }()
       const userSignInList = function(){
         for(var i in res.data.userSignInList){
-          res.data.userSignInList[i].isStarted = new Date(res.data.userSignInList[i].beginTime)<=today;
-          res.data.userSignInList[i].isEnded = new Date(res.data.userSignInList[i].endTime)<today;
+          let beginDate = new Date(res.data.userSignInList[i].beginTime.substr(0, 19));
+          beginDate.setHours(beginDate.getHours()+8);
+          let endDate = new Date(res.data.userSignInList[i].endTime.substr(0, 19));
+          endDate.setHours(endDate.getHours()+8);
+          res.data.userSignInList[i].isStarted = beginDate<=today;
+          res.data.userSignInList[i].isEnded = endDate<today;
         }
         return res.data.userSignInList
       }()
-      console.log(managerSignInList,userSignInList)
       this.setData({
         userStatus: res.data.userStatus,
         managerSignInList,
-        userSignInList,
-        id: options.id
+        userSignInList
       })
     })
   },

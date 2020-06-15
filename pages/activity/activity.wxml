@@ -1,0 +1,16 @@
+<view class="box">
+  <!-- 全部活动 -->
+  <view>
+    <timeLine activityLists="{{allCommunityActivityLists}}"/>
+  </view>
+  <!-- 添加按钮 -->
+  <view 
+    wx:if="{{userStatus==1}}" 
+    class="addBtn show"
+    hover-class="active"
+    hover-start-time="0"
+    hover-stay-time="200"
+    bindtap="addBtnClick">
+    <text class="iconfont icontianjia"></text>
+  </view>
+</view>

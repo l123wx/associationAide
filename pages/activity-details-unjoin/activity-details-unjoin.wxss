@@ -1,0 +1,207 @@
+@import '/styles/iconfont.wxss';
+.hidden {
+  display: none;
+}
+page {
+  background-color: #eee;
+}
+/* 这个view是为了在内容不够多的时候将按钮固定到页面下方，
+   而内容过多的时候又可以让按钮的高度自适应 */
+._box {
+  min-height: calc(100vh - 237rpx);
+  padding: 26rpx 0;
+}
+._box>view {
+  width: calc(710rpx - 60rpx);
+  background-color: #fff;
+  padding: 0 30rpx;
+  border-radius: 20rpx;
+  margin: 0 auto 16rpx;
+}
+/* 内容部分 */
+._box>.middle {
+  padding-top: 34rpx;
+  padding-bottom: 34rpx;
+}
+/* 标题 */
+.middle>.title {
+  font-size: 36rpx;
+  line-height: 36rpx;
+  color: #000;
+}
+/* 相关信息 */
+.middle>.info {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #b5b5b5;
+  margin-top: 30rpx;
+}
+.middle>.info>view {
+  display: inline-block;
+}
+/* 发起人 */
+.middle>.info>.creater {
+  margin-right: 36rpx;
+}
+/* 内容 */
+.middle>.content {
+  font-size: 28rpx;
+  line-height: 44rpx;
+  margin-top: 20rpx;
+  color: #626262;
+}
+/* 时间 地点 */
+.middle>.time {
+  margin-top: 16rpx;
+}
+.middle>.time,
+.middle>.address {
+  font-size: 24rpx;
+  color: #61b6fd;
+}
+.middle>.time>view,
+.middle>.address>view {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 42rpx;
+}
+.middle>.time>.iconfont,
+.middle>.address>.iconfont {
+  font-size: 40rpx;
+  margin-left: -5rpx;
+  margin-right: 10rpx;
+  display: inline-block;
+}
+
+/* 活动留言 */
+.message {
+  padding-top: 24rpx;
+}
+.message>view {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 26rpx 0 0;
+}
+.message .header {
+  height: 28rpx;
+  margin-bottom: 10rpx;
+}
+.message .header>view {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+.message .header>view:nth-child(1) {
+  color: #000;
+}
+.message .header>view:nth-child(2) {
+  color: #61a0fc;
+  float: right;
+}
+.message_item {
+  padding: 20rpx 0;
+}
+.message_item+.message_item {
+  border-top: 1rpx solid #eee;
+}
+.message_item>view {
+  display: inline-block;
+  vertical-align: top;
+}
+.message_item>.avatar>image {
+  width: 59rpx;
+  height: 59rpx;
+  border-radius: 50%;
+}
+.message_item>.info {
+  width: 574rpx;
+  margin-left: 18rpx;
+}
+.message_item>.info>.top {
+  width: 100%;
+  height: 28rpx;
+}
+.message_item>.info>.top>view {
+  display: inline-block;
+}
+.message_item>.info>.top>.name {
+  color: #707070;
+  font-size: 22rpx;
+  vertical-align: top;
+}
+.message_item>.info>.top>.time {
+  color: #b5b5b5;
+  font-size: 22rpx;
+  float: right;
+  vertical-align: top;
+}
+.message_item>.info>.content {
+  color: #000;
+  font-size: 22rpx;
+  margin-top: 10rpx;
+}
+.message>view>.tip {
+  font-size: 22rpx;
+  color: #707070;
+  padding-bottom: 26rpx;
+}
+/* 查看更多按钮 */
+.message>view>.bottom {
+  color: #61b6fd;
+  font-size: 22rpx;
+  text-align: center;
+  padding-top: 10rpx;
+  padding-bottom: 26rpx;
+}
+/* 活动相册 */
+.album {
+  padding-top: 24rpx;
+}
+.album>view {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 26rpx 0 20rpx;
+}
+.album .header {
+  height: 28rpx;
+  margin-bottom: 16rpx;
+}
+.album .header>view {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+.album .header>view:nth-child(1) {
+  color: #000;
+}
+.album .header>view:nth-child(2) {
+  color: #61a0fc;
+  float: right;
+}
+.album_box>view {
+  display: inline-block;
+  width: 154rpx;
+  height: 154rpx;
+  /* background-color: #eee; */
+}
+.album_box>view+view {
+  margin-left: 10rpx;
+}
+.album_box image {
+  width: 100%;
+  height: 100%;
+}
+.album_box>.addPhoto>.iconfont {
+  font-size: 50rpx;
+  margin-top: 30rpx;
+  display: inline-block;
+}
+.album_box>.addPhoto>view {
+  font-size: 24rpx;
+}
+.album>view>.tip {
+  font-size: 22rpx;
+  color: #707070;
+}

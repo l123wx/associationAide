@@ -18,11 +18,6 @@
   text-align: center;
   margin-top: 28rpx;
 }
-/* 背景颜色渐变 */
-/* 收集 */
-.item>view>.upLoad-icon {
-  background-image: linear-gradient(to bottom, #ff5482 0%, #ff726d 100%);
-}
 /* icon渐变 */
 .item>view>.icon>text {
   background-image: linear-gradient(to right, #fff 0%, rgba(255,255,255,0.4) 90%, rgba(255,255,255,0.2) 100%);
@@ -54,7 +49,7 @@
   line-height: 30rpx;
 }
 .info-title>view:nth-child(1) {
-  max-width: calc(100% - 210rpx);
+  max-width: calc(100% - 300rpx);
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

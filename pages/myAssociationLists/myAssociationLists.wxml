@@ -11,7 +11,7 @@
     </block>
   </view>
   <view class="emptyHint" wx:else>
-    <emptyHint wx:if="{{logined}}" bgType="1" statusText="未登录" buttonText="点击登录社团小助手" bindemptyHintBtnClick="toLogin"/>
+    <emptyHint wx:if="{{!logined}}" bgType="1" statusText="未登录" buttonText="点击登录社团小助手" bindemptyHintBtnClick="toLogin"/>
     <emptyHint wx:else bgType="1" statusText="还没有加入社团，快去加入吧"/>
   </view>
 </scroll-view>

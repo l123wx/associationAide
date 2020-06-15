@@ -1,0 +1,54 @@
+@import '/styles/iconfont.wxss';
+page {
+  background-color: #eeeeee;
+}
+.hidden {
+  display: none;
+}
+.userItem {
+  background-color: #fff;
+  padding: 30rpx 40rpx 20rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+.userItem>view {
+  display: inline-block;
+  vertical-align: top;
+}
+.userItem>.avatar>image {
+  height: 87rpx;
+  width: 87rpx;
+  border-radius: 50%;
+  background-color: #eee;
+}
+.userItem>.info {
+  margin-left: 25rpx;
+  width: 520rpx;
+  word-wrap:break-word;
+}
+.userItem>.info>view:nth-child(1){
+  font-size: 28rpx;
+  line-height: 30rpx;
+  color: #000000;
+  margin-top: 10rpx;
+}
+.userItem>.info>view:nth-child(2){
+  font-size: 24rpx;
+  line-height: 26rpx;
+  color: #959595;
+  margin-top: 10rpx;
+}
+.userItem>.info>view:nth-child(2)>view {
+  margin-bottom: 10rpx;
+}
+.userItem>.info>view:nth-child(2) image{
+  max-width: 168rpx;
+  max-height: 168rpx;
+  margin-top: 10rpx;
+  background-color: #bfbfbf;
+}
+.userItem>.moreBtn {
+  float: right;
+  color: #bfbfbf;
+  line-height: 84rpx;
+  padding-left: 20rpx; 
+}

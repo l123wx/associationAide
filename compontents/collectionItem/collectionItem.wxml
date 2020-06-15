@@ -1,0 +1,15 @@
+<!-- 基于通知雏形写的收集组件，没有过多的样式，但内容显示的逻辑都处理过了，使用时将参数直接传进来就行了 -->
+<view class="box" bindtap="notifyItemClick">
+  <!-- 根据用户总量来判断是否显示已交未交，若用户总量为0，就不显示 -->
+  <!-- 如果是管理员，则在结束时间过后后显示“已结束”，如果是普通成员，则在已签后显示“已交”，若时间过了，且没交，就显示“已过期” -->
+    <notifyItem 
+      title="{{title}}"
+      content="{{content}}"
+      iconBgColor="linear-gradient(to bottom, #ff5482 0%, #ff726d 100%)"
+      iconClass="iconshangchuanyunduan"
+      statusContent="{{isCollect==0?(isEnded?(userType==0?'已过期':'已结束'):''):'已完成'}}"
+      showStatus="{{isEnded?true:(!isCollect==0)}}"
+      time="{{time}}"
+      readedNum="{{!isStarted?'未开始':(userType==0?(isCollect==0?'未交':'已交'+userReadCount+'/'+userCount):'已签'+userReadCount+'/'+userCount)}}"
+      showReadedNum="{{userCount!=0}}" /> 
+</view>

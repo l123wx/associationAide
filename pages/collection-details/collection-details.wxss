@@ -1,0 +1,238 @@
+@import '/styles/iconfont.wxss';
+.box {
+  /* height: calc(100vh); */
+  min-height: 100vh;
+  background-color: #eee;
+}
+/* 这个view是为了在内容不够多的时候将按钮固定到页面下方，
+   而内容过多的时候又可以让按钮的高度自适应 */
+._box {
+  min-height: calc(100vh - 237rpx);
+  padding-top: 26rpx;
+}
+._box>view {
+  width: calc(710rpx - 60rpx);
+  background-color: #fff;
+  padding: 0 30rpx;
+  border-radius: 20rpx;
+  margin: 0 auto 16rpx;
+}
+/* 内容部分 */
+._box>.middle {
+  padding-top: 34rpx;
+  padding-bottom: 34rpx;
+}
+/* 标题 */
+.middle>.title {
+  font-size: 36rpx;
+  line-height: 36rpx;
+  color: #000;
+}
+/* 相关信息 */
+.middle>.info {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #b5b5b5;
+  margin-top: 30rpx;
+}
+.middle>.info>view {
+  display: inline-block;
+}
+/* 发起人 */
+.middle>.info>.creater {
+  margin-right: 36rpx;
+}
+/* 内容 */
+.middle>.content {
+  font-size: 28rpx;
+  line-height: 44rpx;
+  margin-top: 20rpx;
+  color: #626262;
+}
+/* 时间 地点 */
+.middle>.time {
+  margin-top: 16rpx;
+}
+.middle>.time,
+.middle>.address {
+  font-size: 24rpx;
+  color: #61b6fd;
+}
+.middle>.time>view,
+.middle>.address>view {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 42rpx;
+}
+.middle>.time>.iconfont,
+.middle>.address>.iconfont {
+  font-size: 40rpx;
+  margin-left: -5rpx;
+  margin-right: 10rpx;
+  display: inline-block;
+}
+/* 已读人数 */
+.readed {
+  position: relative;
+  background-color: #fff;
+  transition: background-color .2s;
+  min-height: 93rpx;
+}
+.readed.active {
+  background-color: #f3f3f3;
+}
+/* 已读人数 */
+.readed>.avatarLists {
+  display: inline-block;
+  margin: 14rpx 0 8rpx;
+}
+.readed>.avatarLists>.avatar {
+  border-radius: 50%;
+  border: 1px solid #e6e6e6;
+  height: 58rpx;
+  width: 58rpx;
+  margin-right: -28rpx;
+  display: inline-block;
+}
+.readed>.people_num {
+  color: #959595;
+  font-size: 28rpx;
+  line-height: 41.5rpx;
+  display: inline-block;
+  position: absolute;
+  right: 24rpx;
+  top: 27rpx;
+}
+.readed>.people_num>view {
+  display: inline-block;
+}
+.readed>.people_num>.iconfont {
+  display: inline-block;
+  transform: rotate(-90deg);
+  font-size: 40rpx;
+  margin-left: 18rpx;
+  vertical-align: top;
+}
+/* 收集内容 */
+.collection_content {
+  padding-top: 24rpx;
+}
+.collection_content>view {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx 0 0;
+}
+.collection_content .title {
+  font-size: 24rpx;
+  color: #000;
+  line-height: 26rpx;
+  margin-bottom: 10rpx;
+}
+.field-index--van-field.field-index--van-field {
+  padding: 20rpx 0;
+}
+.field-index--van-field>.van-cell__title {
+  font-size: 26rpx;
+  color: #000;
+}
+.field-index--van-field .van-field__input {
+  font-size: 26rpx;
+  color: #707070;
+}
+/* 图片上传 */
+.pic_collection {
+  height: 86rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.pic_collection>.title {
+  font-size: 26rpx;
+  color: #000;
+  line-height: 86rpx;
+}
+.pic_collection>.photo_btn {
+  font-size: 26rpx;
+  line-height: 86rpx;
+  color: #b5b5b5;
+}
+.pic_collection>.photo_btn>.iconfont {
+  font-size: 34rpx;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 -3rpx;
+  position: relative;
+  top: 2rpx;
+}
+.pic_collection>.photo_btn>image {
+  height: 46rpx;
+  width: 46rpx;
+  background-color: #eee;
+  display: inline-block;
+  margin-top: 20rpx;
+}
+
+/* 功能 */
+.function {
+  padding-top: 24rpx;
+}
+.function>view {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx 0 0;
+}
+.function .title {
+  font-size: 24rpx;
+  color: #000;
+  line-height: 26rpx;
+}
+.function_item {
+  width: 162rpx;
+  height: 162rpx;
+  text-align: center;
+  display: inline-block;
+  background-color: transparent;
+  padding: 0;
+  line-height: unset;
+  font-size: unset;
+  color: unset;
+  border: none;
+}
+.function_item::after {
+  content: unset;
+}
+.icon>text {
+  font-size: 50rpx;
+  line-height: 50rpx;
+  margin-top: 28rpx;
+  display: inline-block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  -moz-box-decoration-break: clone;
+  color: transparent;
+  position:relative;
+}
+.function_item>.name {
+  font-size: 26rpx;
+  line-height: 26rpx;
+  color: #959595;
+  margin-top: 20rpx;
+}
+
+/* 按钮 */
+.button.button {
+  width: 710rpx;
+  background-color: #61b6fd;
+  text-align: center;
+  height: 82rpx;
+  line-height: 82rpx;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  color: #fff;
+  padding: 0;
+  margin: 80rpx auto 43rpx;
+}
+.button.unable{
+  background-color: #b5b5b5;
+}

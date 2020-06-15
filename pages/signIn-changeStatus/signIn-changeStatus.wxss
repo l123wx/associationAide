@@ -1,0 +1,54 @@
+page {
+  background-color: #eee;
+}
+.box {
+  width: 700rpx;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 24rpx 0;
+  margin-top: 24rpx;
+}
+.title {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #959595;
+  padding-left: 40rpx;
+}
+.middle {
+  padding: 0 20rpx;
+}
+.middle>radio-group>view{
+  padding: 20rpx 0;
+}
+radio {
+  font-size: 26rpx;
+}
+.middle>radio-group>view>input {
+  color: #959595;
+  font-size: 26rpx;
+  border-bottom: 1px solid  #bfbfbf;
+  margin-left: 60rpx;
+  margin-top: 10rpx;
+}
+
+/* 按钮 */
+.button.button {
+  width: 710rpx;
+  background-color: #61b6fd;
+  text-align: center;
+  height: 82rpx;
+  line-height: 82rpx;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  color: #fff;
+  padding: 0;
+  /* margin: 80rpx auto 43rpx; */
+  position: fixed;
+  bottom: 43rpx;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+.button.unable {
+  background-color: #b5b5b5;
+}

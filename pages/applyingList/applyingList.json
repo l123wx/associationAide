@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "list": "./childCpn/list/list",
+    "van-notify": "@vant/weapp/notify/index",
+    "emptyHint": "/compontents/emptyHint/emptyHint"
+  },
+  "navigationBarTitleText": "申请列表"
+}

@@ -1,0 +1,50 @@
+<van-checkbox 
+  value="{{checkedAllPeople}}"
+  bindtap="checkedAllPeople"
+  checked-color="#61b6fd"
+  class="van_checkbox">
+  <view class="infoList_box">
+    <text>全体成员</text>
+  </view>
+</van-checkbox>
+<van-checkbox 
+  value="{{checkedAllAdmin}}"
+  bindtap="checkedAllAdmin"
+  checked-color="#61b6fd"
+  class="van_checkbox">
+  <view class="infoList_box">
+    <text>全体管理员</text>
+  </view>
+</van-checkbox>
+<!-- 年级 -->
+<view>
+  <view class="header">年级</view>
+  <van-checkbox
+    wx:for="{{gradeList}}"
+    wx:key="index"
+    value="{{gradeChecked[item]}}"
+    bindtap="clickGradeList"
+    checked-color="#61b6fd"
+    data-grade="{{item}}"
+    class="van_checkbox">
+    <view class="infoList_box">
+      <text>{{item}}</text>
+    </view>
+  </van-checkbox>
+</view>
+<!-- 部门 -->
+<view wx:if="departmentList.length">
+  <view class="header">部门</view>
+  <van-checkbox
+    wx:for="{{departmentList}}"
+    wx:key="index"
+    value="{{departmentChecked[item.id]}}"
+    bindtap="clickDepartmentList"
+    data-id="{{item.id}}"
+    checked-color="#61b6fd"
+    class="van_checkbox">
+    <view class="infoList_box">
+      <text>{{item.name}}</text>
+    </view>
+  </van-checkbox>
+</view>

@@ -1,0 +1,26 @@
+<block wx:for="{{notifyList}}" wx:key="index">
+  <!-- 签到 -->
+  <view class="itemBox" wx:if="{{item.type==0}}">
+    <signInItem
+      title="{{item.title}}"
+      content="{{item.content}}"
+      beginTime="{{item.beginTime}}"
+      sId="{{item.relatedId}}"/>
+  </view>
+  <!-- 通知 -->
+  <view class="itemBox" wx:if="{{item.type==1}}">
+    <notifyItem
+      title="{{item.title}}"
+      content="{{item.content}}"
+      beginTime="{{item.beginTime}}"
+      nId="{{item.relatedId}}"/> 
+  </view>
+  <!-- 收集 -->
+  <view class="itemBox" wx:if="{{item.type==2}}">
+    <collectionItem
+      title="{{item.title}}"
+      content="{{item.content}}"
+      beginTime="{{item.beginTime}}"
+      cId="{{item.relatedId}}"/>
+  </view>
+</block>

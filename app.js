@@ -36,11 +36,6 @@ App({
               // 如果是从其他页面调用的此方法，调用回调函数
               if(this.userInfoReadyCallback){
                 this.userInfoReadyCallback()
-              } else {
-                // 跳转到我的社团页面
-                wx.switchTab({
-                  url: '/pages/myAssociationLists/myAssociationLists'
-                })
               }
               if(this.myAssociationListsReadyCallback){
                 this.myAssociationListsReadyCallback();
@@ -53,10 +48,9 @@ App({
                 icon: 'none',
                 mask: true
               })
-              注意
-              wx.reLaunch({
-                url: '/pages/personalCenter/personalCenter?userLogined=0'
-              })
+              if( this.loginFailCallback ){
+                this.loginFailCallback();
+              }
             })
           }
         })
@@ -75,9 +69,13 @@ App({
         } else {
           console.log("用户未授权")
           // 没有授权，跳到个人信息页面，提示授权登陆
-          wx.reLaunch({
-            url: '/pages/personalCenter/personalCenter?userLogined=0'
-          })
+          // wx.reLaunch({
+          //   url: '/pages/personalCenter/personalCenter?userLogined=0'
+          // })
+          // 登陆失败的回调
+          if( this.loginFailCallback ){
+            this.loginFailCallback();
+          }
         }
       }
     })
@@ -96,11 +94,12 @@ App({
           // 将后端返回的用户信息储存到全局变量中
           this.globalData.userInfo = res.data;
           console.log(this.globalData.userInfo)
-          // 跳转到我的社团页面
-          wx.switchTab({
-            url: '/pages/myAssociationLists/myAssociationLists'
-          })
+          // // 跳转到我的社团页面
+          // wx.switchTab({
+          //   url: '/pages/myAssociationLists/myAssociationLists'
+          // })
           if(this.userInfoReadyCallback){
+            console.log("用户信息回调函数")
             this.userInfoReadyCallback();
           }
           if(this.myAssociationListsReadyCallback){
@@ -134,15 +133,17 @@ App({
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch: function () {
-    // this.getAllAssociationLists();
-    // this.checkLogin();
+    this.getAllAssociationLists();
+    this.checkLogin();
   },
-
   /**
    * 当小程序启动，或从后台进入前台显示，会触发 onShow
    */
   onShow: function (options) {
-    
+    console.log(options)
+    if(options.query.cId){
+      this.globalData.associationInfo.id = options.query.cId;
+    }
   },
 
   /**
@@ -159,7 +160,14 @@ App({
     
   },
   globalData: {
+    // 用户信息
     userInfo: {},
+    // 所有社团的列表
     allAssociationLists: [],
+    // 现在所在的社团的信息
+    associationInfo: {
+      id: 200,
+      userStatus: 1
+    },
   }
 })

@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -61,16 +61,93 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/signIn/signIn",
-					"pathName": "pages/signIn/signIn",
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
 					"query": "id=200&name=网园资讯工作室",
 					"scene": null
 				},
 				{
+					"id": 2,
+					"name": "pages/activity-details/activity-details",
+					"pathName": "pages/activity-details/activity-details",
+					"query": "aId=200",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "pages/notify-details/notify-details",
+					"pathName": "pages/notify-details/notify-details",
+					"query": "nId=200",
+					"scene": 1008
+				},
+				{
+					"id": 4,
+					"name": "pages/userInfo-details/userInfo-details",
+					"pathName": "pages/userInfo-details/userInfo-details",
+					"query": "userId=203",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/signIn-details/signIn-details",
+					"pathName": "pages/signIn-details/signIn-details",
+					"query": "sId=200&cId=200",
+					"scene": 1008
+				},
+				{
 					"id": -1,
-					"name": "pages/notify/notify",
-					"pathName": "pages/notify/notify",
-					"query": "id=200&name=网园资讯工作室",
+					"name": "pages/associationIndex-joined/associationIndex-joined",
+					"pathName": "pages/associationIndex-joined/associationIndex-joined",
+					"query": "nId=200",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/collection-details/collection-details",
+					"pathName": "pages/collection-details/collection-details",
+					"query": "cId=200",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "pages/activity-details-unjoin/activity-details-unjoin",
+					"pathName": "pages/activity-details-unjoin/activity-details-unjoin",
+					"query": "aId=200",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "pages/selectObjects-group/selectObjects-group",
+					"pathName": "pages/selectObjects-group/selectObjects-group",
+					"query": "userId=202&isSignIn=2&leaceContent=不知道为什么&sId=200",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "pages/selectObjects/selectObjects",
+					"pathName": "pages/selectObjects/selectObjects",
+					"query": "cId=200",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "pages/signIn-create/signIn-create",
+					"pathName": "pages/signIn-create/signIn-create",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 12,
+					"name": "pages/notify-create/notify-create",
+					"pathName": "pages/notify-create/notify-create",
+					"query": "id=200",
+					"scene": null
+				},
+				{
+					"id": 13,
+					"name": "pages/collection-create/collection-create",
+					"pathName": "pages/collection-create/collection-create",
+					"query": "id=200",
 					"scene": null
 				}
 			]

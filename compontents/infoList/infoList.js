@@ -1,4 +1,3 @@
-// pages/personalCenter/childCpn/list/list.js
 Component({
   /**
    * 组件的属性列表

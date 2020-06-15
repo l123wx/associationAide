@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "timeLine": "/compontents/timeLine/timeLine"
+  },
+  "navigationBarTitleText": "活动",
+  "enablePullDownRefresh": true
+}

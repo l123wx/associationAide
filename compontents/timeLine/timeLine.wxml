@@ -1,6 +1,10 @@
+<!-- 这里已经处理好了活动的逻辑，会将传入的活动格式化，所以直接传入活动列表即可 -->
 <view class="box">
-  <block wx:for="{{activityLists}}" wx:for-index="activityYearIndex" wx:for-item="activityYearItem" wx:key="activityYearIndex">
+  <!-- 遍历年份 -->
+  <block wx:for="{{activityListsFormat}}" wx:for-index="activityYearIndex" wx:for-item="activityYearItem" wx:key="activityYearIndex">
+    <!-- 遍历月份 -->
     <block wx:for="{{activityYearItem.data}}" wx:for-index="activityMonthIndex" wx:for-item="activityMonthItem" wx:key="activityMonthIndex">
+      <!-- 将这个月的活动打印出来，并让第一个活动显示时间 -->
       <activityItem
         wx:for="{{activityMonthItem.data}}"
         wx:for-index="index"
@@ -12,7 +16,8 @@
         endTime="{{item.endTime}}"
         month="{{activityMonthItem.month}}"
         year="{{activityYearItem.year}}"
-        showTime="{{index==0}}"/>
+        showTime="{{index==0}}"
+        aId="{{item.id}}"/>
     </block>
   </block>
 </view>

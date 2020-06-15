@@ -20,18 +20,21 @@
 <!-- 展示 -->
 <view class="{{pageIndex!=1?'hidden':''}}">
   <view wx:if="{{associationInfo.communityArticle&&associationInfo.communityArticle.content!=''}}" class="showRoom">
-    {{associationInfo.communityArticle.content}}
+    <!-- {{associationInfo.communityArticle.content}} -->
+      <image src="https://mjlr-file.smtboy.com/stzs/sys-photos/info/info-1.jpg" mode="widthFix" style="width:100%;display:block"></image>
+      <image src="https://mjlr-file.smtboy.com/stzs/sys-photos/info/info-2.jpg" mode="widthFix" style="width:100%;display:block"></image>
+      <image src="https://mjlr-file.smtboy.com/stzs/sys-photos/info/info-3.jpg" mode="widthFix" style="width:100%;display:block"></image>  
   </view>
-  <view wx:else class="emptyHint">
   <!-- 没有东西时候的提示 -->
+  <view wx:else class="emptyHint">
     <emptyHint statusText="这里什么也没有"/>
   </view>
 </view>
 <!-- 活动 -->
 <view class="{{pageIndex!=2?'hidden':''}}">
-  <timeLine wx:if="{{activityLists&&activityLists.length!=0}}" activityLists="{{activityLists}}"/>
-  <view wx:else class="emptyHint">
+  <timeLine wx:if="{{associationInfo&&associationInfo.allCommunityActivityVos.length!=0}}" activityLists="{{associationInfo.allCommunityActivityVos}}"/>
   <!-- 没有东西时候的提示 -->
+  <view wx:else class="emptyHint">
     <emptyHint statusText="这里什么也没有"/>
   </view>
 </view>

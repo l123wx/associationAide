@@ -1,0 +1,15 @@
+<van-action-sheet 
+  show="{{show}}" 
+  round="{{false}}"
+  overlay
+  bind:click-overlay="closeClick">
+  <view>
+    <van-picker 
+      show-toolbar
+      columns="{{ columns }}" 
+      bind:confirm="onConfirm"
+      bind:cancel="closeClick"
+      title="{{title}}"
+      visible-item-count="5"/>
+  </view>
+</van-action-sheet>

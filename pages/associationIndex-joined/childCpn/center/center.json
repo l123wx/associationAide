@@ -3,6 +3,9 @@
   "usingComponents": {
     "function": "../function/function",
     "notifyItem": "/compontents/notifyItem/notifyItem",
-    "emptyHint": "/compontents/emptyHint/emptyHint"
+    "emptyHint": "/compontents/emptyHint/emptyHint",
+    "list":"/compontents/infoList/infoList",
+    "pickerInput": "/compontents/pickerInput/pickerInput",
+    "remind": "../remind/remind"
   }
 }

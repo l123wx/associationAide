@@ -1,0 +1,82 @@
+<scroll-view scroll-y class="box">
+  <view class="_box">
+    <!-- 内容部分 -->
+    <view class="middle">
+      <!-- 标题 -->
+      <view class="title">{{activityInfo.title}}</view>
+      <!-- 相关信息 -->
+      <view class="info">
+        <!-- 发起人 -->
+        <view class="creater">发起人：{{activityInfo.uname}}</view>
+        <!-- 发起时间 -->
+        <view class="create_time">发起时间：{{activityInfo.createTime}}</view>
+      </view>
+      <!-- 内容 -->
+      <view class="content">{{activityInfo.content}}</view>
+      <!-- 时间 -->
+      <view class="time" wx:if="{{activityInfo.beginTime}}">
+        <text class="iconfont iconshijian"></text>
+        <view>{{activityInfo.time}}</view>
+      </view>
+      <!-- 地点 -->
+      <view class="address">
+        <text class="iconfont icondidian"></text>
+        <view>{{activityInfo.place}}</view>
+      </view>
+    </view>
+
+    <!-- 留言 -->
+    <view class="message">
+      <view>
+        <view class="header">
+          <view>活动留言</view>
+        </view>
+        <view class="message_box" wx:if="{{messageList.length}}">
+          <!-- 留言盒子 -->
+          <view 
+            class="message_item {{index>1?(showAllMessage?'':'hidden'):''}}" 
+            wx:for="{{messageList}}"
+            wx:key="index">
+            <view class="avatar">
+              <image src="{{item.avatarUrl}}"></image>
+            </view>
+            <view class="info">
+              <view class="top">
+                <view class="name">{{item.stuName}}</view>
+                <view class="time">{{item.time}}</view>
+              </view>
+              <view class="content">{{item.content}}</view>
+            </view>
+          </view>
+        </view>
+        <view wx:else class="tip">还没有人留过言</view>
+        <view 
+          class="bottom" 
+          bindtap="changeMessageShowStatus" 
+          wx:if="{{messageList.length && messageList.length>2}}">
+          {{showAllMessage?'收起留言':'展开查看更多留言'}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 活动相册 -->
+    <view class="album">
+      <view>
+        <view class="header">
+          <view>活动相册</view>
+          <view wx:if="{{albumList.length>3}}">查看全部</view>
+        </view>
+        <view class="album_box"  wx:if="{{albumList.length}}">
+          <view wx:for="{{albumList}}" wx:key="item" wx:if="{{index<4}}">
+            <image 
+              src="{{item.photoUrl}}" 
+              mode="aspectFit"
+              data-url="{{item.photoUrl}}"
+              bindtap="previewImage"></image>
+          </view>
+        </view>
+        <view class="tip" wx:else>这个社团的人太懒了，还没人上传照片</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

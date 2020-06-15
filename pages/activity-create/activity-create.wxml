@@ -1,0 +1,79 @@
+<van-notify id="van-notify" />
+<popup 
+  show="{{popupIsShow}}"
+  position="bottom"
+  close-on-click-overlay
+>
+  <datetime-picker
+    value="{{timePickerValue}}"
+    title="选择年月日"
+    min-date="{{minDate}}"
+    max-date="{{maxDate}}"
+    bindconfirm="chooseTime"
+    bindcancel="chooseCancel"
+  />
+</popup>
+<view class="box">
+  <!-- 标题 -->
+  <view class="title">
+    <field 
+      placeholder="请输入活动标题（15字以内）" 
+      maxlength="15"
+      bindinput="titleChange"/>
+  </view>
+  <!-- 描述 -->
+  <view class="intro">
+    <field
+      value=""
+      type="textarea"
+      autosize
+      placeholder="请输入描述（选填）"
+      maxlength="200"
+      show-word-limit
+      bindinput="introChange"
+    />
+  </view>
+  <!-- 活动开始时间 -->
+  <view bindtap="chooseBeginTime">
+    <field 
+      label="活动开始时间"
+      placeholder="点击选择活动开始时间"
+      disabled
+      input-align="right"
+      value="{{beginTimeShow}}"/>
+  </view>
+  <!-- 活动结束时间 -->
+  <view bindtap="chooseEndTime">
+    <field 
+      label="活动结束时间"
+      placeholder="点击选择活动结束时间"
+      disabled
+      input-align="right"
+      value="{{endTimeShow}}"/>
+  </view>
+  <!-- 活动地点 -->
+  <view class="place">
+    <field 
+      label="活动地点"
+      placeholder="请输入地点"
+      input-align="right"
+      bindinput="placeChange"/>
+  </view>
+
+  <!-- 对外展示该活动 -->
+  <view>
+    <field 
+      label="对外展示该活动"
+      placeholder=""
+      disabled
+      title-width="200rpx"
+      input-align="right">
+      <switch 
+        slot="button"
+        bindchange="isPublicChange"/>
+    </field>
+  </view>
+</view>
+
+<!-- 按钮 -->
+<view class="button" bindtap="createActivity">发布活动</view>

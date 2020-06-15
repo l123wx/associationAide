@@ -1,0 +1,32 @@
+<van-index-bar index-list="{{genderInitArray}}">
+  <block wx:if="{{isAdmin}}">
+    <view class="infoList_box" bindtap="toInvite">
+      <view style="background-color:#ffa767">
+        <text class="iconfont iconyaoqingchengyuan1"></text>
+      </view>
+      <text>邀请成员</text>
+      <view class="border"></view>
+    </view>
+    <view class="infoList_box" bindtap="toApplyingList">
+      <view style="background-color:#44c2bf">
+        <text class="iconfont iconyaoqingchengyuan"></text>
+      </view>
+      <text>加入社团申请</text>
+      <view class="border"></view>
+    </view>
+  </block>
+  <view wx:for="{{userList}}" wx:key="index" wx:if="{{item.length!=0}}">
+    <van-index-anchor index="{{index}}" class="index_anchor"/>
+    <block wx:for="{{item}}" wx:key="index">
+      <view 
+        class="infoList_box" 
+        bindtap="userClick" 
+        data-id="{{item.id}}"
+      >
+        <image src="{{item.avatarUrl}}"></image>
+        <text>{{item.stuName}}</text>
+        <view class="border"></view>
+      </view>
+    </block>
+  </view>
+</van-index-bar>

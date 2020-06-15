@@ -1,0 +1,68 @@
+button {
+  position: relative;
+  margin: unset;
+  padding: unset;
+  box-sizing: unset;
+  font-size: unset;
+  text-align: unset;
+  text-decoration: unset;
+  line-height: unset;
+  border-radius: unset;
+  -webkit-tap-highlight-color: unset;
+  overflow: unset;
+  color: unset;
+  background-color: unset;
+}
+button::after {
+  content: unset;
+}
+.hidden {
+  display: none;
+}
+.box {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0);
+  z-index: 5;
+}
+.box>view {
+  height: 276rpx;
+  width: 486rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-55%);
+  transition: transform .3s;
+}
+.title {
+  font-size: 30rpx;
+  color: #61b6fd;
+  text-align: center;
+  line-height: 36rpx;
+  margin-top: 64rpx;
+}
+.box.show {
+  background-color: rgba(0,0,0,0.5);
+  transition: background-color .3s;
+}
+.box.show>view {
+  transform: translate(-50%,-50%);
+}
+
+button {
+  color: #fff;
+  background-color: #61b6fd;
+  width: 426rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  /* border: 1.2px dashed #fff; */
+  border-radius: 14rpx;
+  display: block;
+  text-align: center;
+  margin: 50rpx auto 0 ;
+}

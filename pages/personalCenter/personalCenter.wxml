@@ -1,24 +1,53 @@
+<dialogInput
+  id="dialogInput"
+  bindconfirm="inputConfirm"/>
+<pickerInput 
+  id="pickerInput"
+  bindconfirm="pickerConfirm"/>
+<van-notify id="van-notify"/>
 <scroll-view scroll-y class="box">
-  <header avatarSrc="{{avatarUrl}}"
-          username="{{username}}"
-          joinedNum="2"
-          manageNum="1"
-          userLogined="{{userLogined}}"
-          bindlogin="login"/>
+  <header 
+    avatarSrc="{{avatarUrl}}"
+    username="{{username}}"
+    joinedNum="{{joinedNum}}"
+    manageNum="{{manageNum}}"
+    userLogined="{{userLogined}}"
+    bindlogin="login"/>
   <view class="infoLists" wx:if="{{userLogined}}">
-    <list wx:for="{{infoList}}" 
-          wx:key="index"
-          title="{{item.title}}"
-          iconClass="{{item.iconClass}}"
-          iconColor="{{item.iconColor}}"
-          content="{{item.content}}"/>
+    <list 
+      wx:for="{{infoList}}" 
+      wx:key="index"
+      title="{{item.title}}"
+      iconClass="{{item.iconClass}}"
+      iconColor="{{item.iconColor}}"
+      content="{{item.content}}"
+      data-title="{{item.title}}"
+      data-index="{{index}}"
+      data-type="{{item.inputType}}"
+      bindtap="infoListClick"/>
   </view>
   <view class="settingList">
-    <list wx:for="{{settingList}}" 
-          wx:key="index"
-          title="{{item.title}}"
-          iconClass="{{item.iconClass}}"
-          iconColor="{{item.iconColor}}"
-          content="{{item.content}}"/>
+    <list 
+      wx:for="{{settingList}}" 
+      wx:key="index"
+      title="{{item.title}}"
+      iconClass="{{item.iconClass}}"
+      iconColor="{{item.iconColor}}"
+      content="{{item.content}}"
+      data-title="{{item.title}}"
+      bindtap="listClick"/>
+    <!-- 意见反馈 -->
+    <button open-type="feedback">
+      <list
+        title="意见反馈"
+        iconClass="iconsuggest"
+        iconColor="#44c2bf"/>
+    </button>
+    <button open-type="contact">
+      <list
+        title="联系我们"
+        iconClass="icontrust"
+        iconColor="#ffa767"/>
+    </button>
   </view>
 </scroll-view>

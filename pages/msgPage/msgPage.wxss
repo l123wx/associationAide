@@ -1,0 +1,57 @@
+@import '/styles/iconfont.wxss';
+button {
+  padding: 0;
+}
+button::after {
+  content: unset;
+}
+.iconxuanzhong.iconfont {
+  color: #09bb07;
+  font-size: 150rpx;
+  margin: 150rpx auto 0;
+  display: block;
+  text-align: center;
+}
+.avatar {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  margin: 150rpx auto 30rpx;
+  display: block;
+}
+.title {
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 40rpx;
+}
+.intro {
+  padding: 0 80rpx;
+  font-size: 24rpx;
+  text-align: center;
+  word-break: break-all;
+  margin-top: 40rpx;
+  color: #707070;
+}
+.button {
+  width:700rpx;
+  height: 88rpx;
+  background-color: #61b6fd;
+  font-size: 30rpx;
+  line-height: 88rpx;
+  color: #fff;
+  text-align: center;
+  border-radius: 10rpx;
+  margin: 64rpx auto 0;
+  transition: background-color .2s;
+}
+.button.active {
+  background-color: #4f97d1;
+}
+.bottom_text {
+  text-align: center;
+  color: #707070;
+  font-size: 26rpx;
+  position: fixed;
+  bottom: 100rpx;
+  width: 100%;
+}

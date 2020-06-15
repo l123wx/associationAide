@@ -20,14 +20,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    console.log(app.globalData.userInfo!={})
     this.setData({
       myAssociationLists : app.globalData.userInfo.userCommunityVos||[],
-      logined: app.globalData.userInfo!={}
+      logined: !!app.globalData.userInfo.nickName
     })
     app.myAssociationListsReadyCallback = () =>{
       this.setData({
         myAssociationLists : app.globalData.userInfo.userCommunityVos||[],
-        logined: app.globalData.userInfo!={}
+        logined: !!app.globalData.userInfo.nickName
       })
       console.log(this.data.logined,this.data.myAssociationLists)
     }
@@ -36,7 +37,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    app.globalData.associationInfo.userStatus = -1;
+    console.log(app.globalData.associationInfo.userStatus)
   },
 
   /**

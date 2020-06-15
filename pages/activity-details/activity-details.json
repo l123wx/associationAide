@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "signInItem": "/compontents/signInItem/signInItem",
+    "collectionItem": "/compontents/collectionItem/collectionItem",
+    "notifyItem": "/compontents/notifyItem/notifyItem"
+  }
+}

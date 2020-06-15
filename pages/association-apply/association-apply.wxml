@@ -1,0 +1,17 @@
+<login show="{{loginShow}}" bindhidden="loginHidden"/>
+<van-notify id="van-notify" />
+<view>
+  <view class="title">申请加入{{name}}</view>
+  <view>
+    <view class="intro">发送添加社团申请</view>
+    <van-field
+      placeholder="请输入验证信息便于管理员审核（选填）"
+      border="{{false}}"
+      bind:change="onChange"
+      type="textarea"
+      autosize
+      show-word-limit
+      maxlength="250"/>
+  </view>
+  <view class="button" bindtap="sendApplying">发送申请</view>
+</view>

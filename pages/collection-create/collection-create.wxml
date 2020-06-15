@@ -1,0 +1,119 @@
+<van-notify id="van-notify" />
+<popup 
+  show="{{popupIsShow}}"
+  position="bottom"
+  close-on-click-overlay
+>
+  <datetime-picker
+    value="{{timePickerValue}}"
+    title="选择时间"
+    min-date="{{minDate}}"
+    max-date="{{maxDate}}"
+    bindconfirm="chooseTime"
+    bindcancel="chooseCancel"
+  />
+</popup>
+<view class="box">
+  <!-- 标题 -->
+  <view class="title">
+    <field 
+      placeholder="请输入收集标题（15字以内）" 
+      maxlength="15"
+      bindinput="titleChange"/>
+  </view>
+  <!-- 描述 -->
+  <view class="intro">
+    <field
+      value=""
+      type="textarea"
+      autosize
+      placeholder="请输入描述（选填）"
+      maxlength="200"
+      show-word-limit
+      bindinput="introChange"
+    />
+  </view>
+
+  <!-- 收集列表 -->
+  <view class="header">收集项目</view>
+  <view class="collectionList">
+    <block wx:for="{{collectionList}}" wx:key="index">
+      <picker 
+        data-index="{{index}}" 
+        mode="selector" 
+        range="{{['文字','图片']}}"
+        bindchange="chooseCollectionItemType">
+        <view class="collection_item">
+          <input 
+            placeholder="请输入要收集的内容"
+            placeholder-style="color:#959595;font-size:26rpx"
+            value="{{item.title}}"
+            catchtap="catch"
+            data-index="{{index}}"
+            bindinput="collectionInputChange"></input>
+          <view>{{item.type=='string'?'文字':'图片'}}</view>
+          <text 
+            catchtap="deleteCollection" 
+            class="iconfont iconguanbi"
+            data-index="{{index}}"></text>
+        </view>
+      </picker>
+    </block>
+  </view>
+  <view class="add_collection_btn" bindtap="addCollection">
+    <text class="iconfont icontianjia"></text>
+    <text>添加收集内容</text>
+  </view>
+
+  <!-- 签到开始时间 -->
+  <view bindtap="chooseBeginTime">
+    <field 
+      label="收集开始时间"
+      placeholder="点击选择收集开始时间"
+      disabled
+      title-width="250rpx"
+      input-align="right"
+      value="{{beginTimeShow}}"/>
+  </view>
+  <!-- 收集结束时间 -->
+  <view bindtap="chooseEndTime">
+    <field 
+      label="收集结束时间"
+      placeholder="点击选择收集结束时间"
+      disabled
+      input-align="right"
+      value="{{endTimeShow}}"/>
+  </view>
+  <!-- 通知对象 -->
+  <view>
+    <field 
+      label="通知对象"
+      disabled
+      title-width="200rpx"
+      input-align="right">
+      <text slot="button" class="iconfont icontianjia1" bindtap="chooseNotifyObj"></text>
+    </field>
+  </view>
+  <!-- 归属活动 -->
+  <view>
+   <picker 
+    mode="selector" 
+    range="{{activityList}}" 
+    range-key="title" 
+    header-text="选择一个活动"
+    bindchange="pickerChange"
+    >
+      <field 
+        label="归属活动"
+        disabled
+        title-width="200rpx"
+        input-align="right">
+        <text wx:if="{{activityChecked.title}}" slot="button">{{activityChecked.title}}</text>
+        <text wx:else slot="button" class="iconfont icontianjia1"></text>
+      </field>
+   </picker>
+  </view>
+</view>
+
+<!-- 按钮 -->
+<view class="button" bindtap="createNotify">发布通知</view>

@@ -19,11 +19,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
     request({
       url: '/community/getOneCommunityInfo',
-      data: {cId:options.id}
+      data: {cId:app.globalData.associationInfo.id}
     }).then(res=>{
+      console.log(res)
       this.setData({
         associationInfo: res.data
       })

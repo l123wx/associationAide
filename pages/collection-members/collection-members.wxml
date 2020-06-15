@@ -1,0 +1,58 @@
+<!-- 参与成员列表 -->
+<view>
+  <header
+    navItemLists="{{navItemList}}" 
+    bindnavClick="navClick"/>
+  <!-- 已提交 -->
+  <view class="{{navActiveIndex==0?'':'hidden'}}">
+    <view class="userItem"
+      wx:for="{{userList.readed}}"
+      wx:key="index">
+      <!-- 头像 -->
+      <view class="avatar">
+        <image src="{{item.avatarUrl}}"></image>
+      </view>
+      <view class="info">
+        <!-- 姓名 -->
+        <view>{{item.userStuName}}</view>
+        <!-- 已提交内容 -->
+        <view>
+          <block wx:for="{{item.collectItemVoList}}" wx:key="index">
+            <!-- 文字 -->
+            <view wx:if="{{item.type=='string'}}">
+              {{item.title}}:  {{item.value}}
+            </view>
+            <!-- 图片 -->
+            <view wx:else>
+              {{item.title}}:  
+              <view>
+                <image 
+                  mode="aspectFit" 
+                  src="{{item.value}}"
+                  bindtap="previewImage"
+                  data-url="{{item.value}}"></image>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 未提交 -->
+  <view class="{{navActiveIndex==1?'':'hidden'}}">
+    <view class="userItem"
+      wx:for="{{userList.unread}}"
+      wx:key="index">
+      <!-- 头像 -->
+      <view class="avatar">
+        <image src="{{item.avatarUrl}}"></image>
+      </view>
+      <view class="info">
+        <!-- 姓名 -->
+        <view>{{item.userStuName}}</view>
+        <!-- 文字提示 -->
+        <view>未提交</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,96 @@
+<van-notify id="van-notify" />
+<popup 
+  show="{{popupIsShow}}"
+  position="bottom"
+  close-on-click-overlay
+>
+  <datetime-picker
+    value="{{timePickerValue}}"
+    title="选择时间"
+    min-date="{{minDate}}"
+    max-date="{{maxDate}}"
+    bindconfirm="chooseTime"
+    bindcancel="chooseCancel"
+  />
+</popup>
+<view class="box">
+  <!-- 标题 -->
+  <view class="title">
+    <field 
+      placeholder="请输入签到标题（15字以内）" 
+      maxlength="15"
+      bindinput="titleChange"/>
+  </view>
+  <!-- 描述 -->
+  <view class="intro">
+    <field
+      value=""
+      type="textarea"
+      autosize
+      placeholder="请输入描述（选填）"
+      maxlength="200"
+      show-word-limit
+      bindinput="introChange"
+    />
+  </view>
+  <!-- 签到开始时间 -->
+  <view bindtap="chooseBeginTime">
+    <field 
+      label="签到开始时间"
+      placeholder="点击选择签到开始时间"
+      disabled
+      title-width="250rpx"
+      input-align="right"
+      value="{{beginTimeShow}}"/>
+  </view>
+  <!-- 签到结束时间 -->
+  <view bindtap="chooseEndTime">
+    <field 
+      label="签到结束时间"
+      placeholder="点击选择签到结束时间"
+      disabled
+      input-align="right"
+      value="{{endTimeShow}}"/>
+  </view>
+  <!-- 签到地点 -->
+  <view class="place">
+    <field 
+      label="签到地点（选填）"
+      placeholder="请输入地点"
+      title-width="250rpx"
+      input-align="right"
+      bindinput="placeChange"/>
+  </view>
+  <!-- 通知对象 -->
+  <view>
+    <field 
+      label="通知对象"
+      disabled
+      title-width="200rpx"
+      input-align="right">
+      <text slot="button" class="iconfont icontianjia1" bindtap="chooseNotifyObj"></text>
+    </field>
+  </view>
+  <!-- 归属活动 -->
+  <view>
+   <picker 
+    mode="selector" 
+    range="{{activityList}}" 
+    range-key="title" 
+    header-text="选择一个活动"
+    bindchange="pickerChange"
+    >
+      <field 
+        label="归属活动"
+        disabled
+        title-width="200rpx"
+        input-align="right">
+        <text wx:if="{{activityChecked.title}}" slot="button">{{activityChecked.title}}</text>
+        <text wx:else slot="button" class="iconfont icontianjia1"></text>
+      </field>
+   </picker>
+  </view>
+</view>
+
+<!-- 按钮 -->
+<view class="button" bindtap="createNotify">发布通知</view>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "field": "@vant/weapp/field/index",
+    "popup": "@vant/weapp/popup/index",
+    "datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-notify": "@vant/weapp/notify/index"
+  },
+  "navigationBarTitleText": "创建签到"
+}

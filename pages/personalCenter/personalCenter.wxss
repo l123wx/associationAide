@@ -1,7 +1,28 @@
 /* pages/personalCenter/personalCenter.wxss */
-.box {
-  height: calc(100vh);
+button {
+  position: relative;
+  margin: unset;
+  padding: unset;
+  box-sizing: unset;
+  font-size: unset;
+  text-align: unset;
+  text-decoration: unset;
+  line-height: unset;
+  border-radius: unset;
+  -webkit-tap-highlight-color: unset;
+  overflow: unset;
+  color: unset;
+  background-color: unset;
+}
+button::after {
+  content: unset;
+}
+page {
   background-color: #edeeee;
+}
+.box {
+  max-height: 100vh;
+  min-height: 100vh; 
 }
 .infoLists {
   margin-top: 56rpx;

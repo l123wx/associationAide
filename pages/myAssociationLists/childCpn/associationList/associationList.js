@@ -1,4 +1,4 @@
-// pages/myAssociation/childComponents/associationList.js
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
@@ -38,9 +38,14 @@ Component({
   methods: {
     // 社团被点击时触发
     listClick() {
-      // console.log("去详情页"+this.properties.aId) 
+      console.log(this.properties.aId)
+      app.globalData.associationInfo = {
+        id:this.properties.aId,
+        name:this.properties.name,
+        logoUrl:this.properties.logoSrc
+      }
       wx.navigateTo({
-        url:"/pages/associationIndex-joined/associationIndex-joined?id="+this.properties.aId+"&name="+this.properties.name
+        url:"/pages/associationIndex-joined/associationIndex-joined"
       })
     }
   }

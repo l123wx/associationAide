@@ -21,13 +21,13 @@
       class="notify-box {{secondNavIndex==1?(!item.isSign==1?'':'hidden'):secondNavIndex==2?(item.isSign==1?'':'hidden'):secondNavIndex==3?(!item.isSign==1&&item.isEnded?'':'hidden'):''}}" 
       wx:for="{{userSignInList}}" 
       wx:key="index">
-      <singInItem
+      <signInItem
         title="{{item.title}}"
         content="{{item.content}}"
         isSign="{{item.isSign}}"
         beginTime="{{item.beginTime}}"
         endTime="{{item.endTime}}"
-        nId="{{item.signId}}"
+        sId="{{item.signId}}"
         userCount="{{item.userCount}}"
         userReadCount="{{item.userReadCount}}"
         userType="{{0}}"
@@ -41,13 +41,13 @@
       class="notify-box {{secondNavIndex==1?(item.isStarted&&!item.isEnded?'':'hidden'):secondNavIndex==2?(item.isEnded?'':'hidden'):''}}" 
       wx:for="{{managerSignInList}}" 
       wx:key="index">
-      <singInItem
+      <signInItem
         title="{{item.title}}"
         content="{{item.content}}"
         isSign="{{0}}"
         beginTime="{{item.beginTime}}"
         endTime="{{item.endTime}}"
-        nId="{{item.signId}}"
+        sId="{{item.signId}}"
         userCount="{{item.userCount}}"
         userReadCount="{{item.userReadCount}}"
         userType="{{1}}"

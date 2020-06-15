@@ -1,0 +1,6 @@
+<view class="box {{isShow?'':'hidden'}} {{showAnimation?'show':''}}" bindtap="hidden">
+  <view catchtap="catch">
+    <view class="title">欢迎使用</view>
+    <button open-type="getUserInfo" bindgetuserinfo="btnClick">一键登录</button>
+  </view>
+</view>

@@ -1,4 +1,5 @@
 import request from "../../service/network";
+const app = getApp();
 Page({
 
   /**
@@ -43,7 +44,7 @@ Page({
     // 二级导航栏选中项index
     secondNavIndex: 0,
     // 用户状态 0普通成员 1管理员
-    userStatus: 1,
+    userStatus: 0,
     // 作为普通成员的通知列表
     userNoticeList: [],
     // 作为管理员的通知列表
@@ -68,6 +69,9 @@ Page({
   // 点击添加按钮时触发
   addBtnClick() {
     console.log("发布新通知")
+    wx.navigateTo({
+      url: '/pages/notify-create/notify-create',
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -75,7 +79,7 @@ Page({
   onLoad: function (options) {
     request({
       url: "/communityNotice/getUserAllNoticeInCommunity",
-      data: {cId:options.id}
+      data: {cId:app.globalData.associationInfo.id}
     }).then(res=>{
       this.setData({
         userStatus: res.data.userStatus,

@@ -53,6 +53,9 @@ Component({
   methods: {
     notifyItemClick() {
       console.log("id为"+this.properties.nId+"的通知被点了");
+      wx.navigateTo({
+        url: '/pages/notify-details/notify-details?nId='+this.properties.nId
+      })
     }
   },
   lifetimes: {

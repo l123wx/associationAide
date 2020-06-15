@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "loginBox": "/compontents/login/login",
+    "van-notify": "@vant/weapp/notify/index"
+  }
+}

@@ -1,7 +1,9 @@
 {
   "usingComponents": {
     "header":"./childCpn/header/header",
-    "list":"./childCpn/list/list",
-    "picker": "@vant/weapp/picker/index"
+    "list":"/compontents/infoList/infoList",
+    "dialogInput": "/compontents/dialogInput/dialogInput",
+    "pickerInput": "/compontents/pickerInput/pickerInput",
+    "van-notify": "@vant/weapp/notify/index"
   }
 }

@@ -1,0 +1,45 @@
+@import '/styles/iconfont.wxss';
+.hidden {
+  display: none;
+}
+page {
+  background-color: #eee;
+}
+.box {
+  margin: 20rpx 0;
+  min-height: 980rpx;
+}
+.box>view {
+  background-color: #fff;
+}
+.title,
+.intro,
+.place {
+  margin-bottom: 17rpx;
+}
+
+
+.van-field__input.van-field__input--textarea {
+  height: 240rpx !important;
+}
+.iconfont.icontianjia1{
+  font-size: 46rpx;
+  position: relative;
+  top: 4rpx;
+}
+/* 按钮 */
+.button.button {
+  width: 710rpx;
+  background-color: #61b6fd;
+  text-align: center;
+  height: 82rpx;
+  line-height: 82rpx;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  color: #fff;
+  padding: 0;
+  margin: 80rpx auto 43rpx;
+}
+.button.unable{
+  background-color: #b5b5b5;
+}

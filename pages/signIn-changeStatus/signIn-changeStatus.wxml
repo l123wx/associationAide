@@ -1,0 +1,32 @@
+<!-- 状态修改处 -->
+<view class="box">
+  <view class="title">修改用户名签到状态</view>
+  <view class="middle">
+    <radio-group bindchange="onChange">
+      <view>
+        <radio 
+          value="0" 
+          checked="{{isSignIn==0}}" 
+          color="#61b6fd"
+          disabled="{{isSignIn==0}}">未签到</radio>
+      </view>
+      <view>
+        <radio 
+          value="1"
+          checked="{{isSignIn==1}}" 
+          color="#61b6fd"
+          disabled="{{isSignIn==1}}">已签到</radio>
+      </view>
+      <view>
+        <radio 
+          value="2" 
+          checked="{{isSignIn==2}}" 
+          color="#61b6fd"
+          disabled="{{isSignIn==2}}">请假</radio>
+        <input placeholder="请输入请假原因（选填）" value="{{leaveContent}}" bindinput="inputValueChange"></input>
+      </view>
+    </radio-group>
+  </view>
+</view>
+<!-- 确认修改按钮 -->
+<view class="button {{isChange?'':'unable'}}" bindtap="upDateClick">确认修改</view>

@@ -1,15 +1,30 @@
+<pickerInput 
+  id="pickerInput"
+  bindconfirm="pickerConfirm"
+  isTabBarPage="{{false}}"/>
 <view>
   <!-- 提醒 -->
   <view class="{{activeIndex==0?'':'hidden'}}">
-    东西还没放上来
+    <remind 
+      allCommunityActivityVos="{{allCommunityActivityVos}}"
+      communityReminds="{{communityReminds}}"/>
   </view>
   <!-- 功能 -->
-  <view class="{{activeIndex==1?'':'hidden'}}">
-    <view class="" bindtap="functionClick">功能</view>
-    <!-- <function /> -->
+  <view class="function {{activeIndex==1?'':'hidden'}}">
+    <function />
   </view>
   <!-- 我的 -->
   <view class="{{activeIndex==2?'':'hidden'}}">
-    3
+    <list 
+      wx:for="{{infoList}}" 
+      wx:key="index"
+      title="{{item.title}}"
+      iconClass="{{item.iconClass}}"
+      iconColor="{{item.iconColor}}"
+      content="{{item.content}}"
+      data-title="{{item.title}}"
+      data-index="{{index}}"
+      data-type="{{item.inputType}}"
+      bindtap="infoListClick"/>
   </view>
 </view>

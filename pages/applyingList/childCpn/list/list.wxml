@@ -1,0 +1,25 @@
+<view class="userItem {{listActive?'active':''}}">
+  <view>
+    <!-- 头像 -->
+    <view class="avatar">
+      <image src="{{avatarUrl}}"></image>
+    </view>
+    <view class="info">
+      <!-- 姓名 -->
+      <view>{{name}}</view>
+      <!-- 申请理由（备注） -->
+      <view>{{applyContent!=''?applyContent:'未填写'}}</view>
+    </view>
+    <!-- 更多 按钮 -->
+    <view 
+      class="moreBtn"
+      bindtap="moreBtn">
+      <text class="iconfont iconcaidan"></text>
+    </view>
+  </view>
+  <!-- 右侧弹出的按钮 -->
+  <view class="btn_box">
+    <view bindtap="btnClick" data-index="0">通过</view>
+    <view bindtap="btnClick" data-index="1">拒绝</view>
+  </view>
+</view>
