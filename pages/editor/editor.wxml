@@ -7,7 +7,9 @@
     bindready="onEditorReady"
     show-img-resize="{{true}}"
     show-img-toolbar="{{true}}"
-    show-img-size="{{true}}">
+    show-img-size="{{true}}"
+    value="{{value}}"
+    bindinput="changeEditor">
   </editor>
 </view>
 <view class="toolbar" catchtouchend="format" style="bottom: {{isIOS ? keyboardHeight : 0}}px">
@@ -21,6 +23,4 @@
   <i class="iconfont iconicon-undo" bindtap="undo"></i>
   <i class="iconfont iconicon-redo" bindtap="redo"></i>
 </view>
-<view class="button">
-  <button type="primary">完成编辑</button>
-</view>
+<view class="button" bindtap="finishedBtn">完成编辑</view>

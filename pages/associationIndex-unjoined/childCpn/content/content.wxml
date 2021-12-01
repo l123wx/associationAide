@@ -20,10 +20,10 @@
 <!-- 展示 -->
 <view class="{{pageIndex!=1?'hidden':''}}">
   <view wx:if="{{associationInfo.communityArticle&&associationInfo.communityArticle.content!=''}}" class="showRoom">
-    <!-- {{associationInfo.communityArticle.content}} -->
-      <image src="https://mjlr-file.smtboy.com/stzs/sys-photos/info/info-1.jpg" mode="widthFix" style="width:100%;display:block"></image>
-      <image src="https://mjlr-file.smtboy.com/stzs/sys-photos/info/info-2.jpg" mode="widthFix" style="width:100%;display:block"></image>
-      <image src="https://mjlr-file.smtboy.com/stzs/sys-photos/info/info-3.jpg" mode="widthFix" style="width:100%;display:block"></image>  
+    <editor 
+      id="editor"
+      bindready="onEditorReady">
+    </editor>
   </view>
   <!-- 没有东西时候的提示 -->
   <view wx:else class="emptyHint">

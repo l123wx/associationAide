@@ -89,7 +89,8 @@ Page({
         nId: this.data.nId
       }
     }).then(res=>{
-      // 判断是否已读
+      console.log(res)
+      // 判断是否已读 如果是未读着发送已读的请求
       if(res.data.isRead==0){
         this.readNotify();
       }
@@ -102,8 +103,12 @@ Page({
       res.data.communityNotice.createTime = getMonthAndDay(res.data.communityNotice.createTime)
       // 添加开始时间到结束时间的时间格式
       res.data.communityNotice.time = function(){
-        const beginTime = res.data.communityNotice.beginTime;
-        return getMonthAndDay(beginTime)+" "+getHoursAndMinutes(beginTime);
+        if(res.data.communityNotice.beginTime){
+          const beginTime = res.data.communityNotice.beginTime;
+          return getMonthAndDay(beginTime)+" "+getHoursAndMinutes(beginTime);
+        }else{
+          return ''
+        }
       }()
       // 筛选出已读的用户
       let readedUserArray = [];

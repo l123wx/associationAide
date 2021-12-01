@@ -1,3 +1,7 @@
+// const APIURL = 'https://stzs.smtboy.com/api';
+const APIURL = 'http://172.16.42.190/api';
+
+
 export default function request(options) {  //导出此方法
   return new Promise((resolve, reject) => {
     wx.showLoading({
@@ -5,8 +9,8 @@ export default function request(options) {  //导出此方法
       mask: true,
     })
     wx.request({
-      url: 'https://stzs.smtboy.com/api' + options.url,
-      method: options.method || 'GET', //如果options.method无值则为GET
+      url: APIURL + options.url,
+      method: options.method || 'GET', //如果options.2
       data: options.data || {},	//如果options.data无值则为{}
       header: {
         'content-type': (options.header&&options.header['content-type']) || 'application/x-www-form-urlencoded',

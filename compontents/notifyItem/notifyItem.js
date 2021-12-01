@@ -60,8 +60,10 @@ Component({
   },
   lifetimes: {
     ready() {
-      const time = getlatelyDate(this.properties.beginTime);
-      this.setData({time}) 
+      if(this.properties.beginTime){
+        const time = getlatelyDate(this.properties.beginTime);
+        this.setData({time}) 
+      }
     }
   }
 })

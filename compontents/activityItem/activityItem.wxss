@@ -30,6 +30,7 @@
   text-align: center;
   width: 66rpx;
   margin-right: 4rpx;
+  /* margin-bottom: 188rpx; */
 }
 .timeLine>view {
   position: relative;

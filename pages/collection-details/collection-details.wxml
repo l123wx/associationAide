@@ -69,7 +69,8 @@
               <!-- 图片上传 -->
               <view class="pic_collection" wx:if="{{item.type=='image'}}">
                 <view class="title">{{item.title}}</view>
-                <view class="photo_btn" wx:if="{{item.value==''}}" bindtap="choosePhoto" data-index="{{index}}">
+                <!-- 上传按钮 -->
+                <view class="photo_btn" wx:if="{{item.value==''}}" bindtap="isCollect?choosePhoto:''" data-index="{{index}}">
                   点击上传图片
                   <text class="iconfont icontianjia1"></text>
                 </view>
@@ -111,7 +112,7 @@
   </view>
   <!-- 按钮 -->
   <!-- 不能点击的按钮 -->
-  <button class="button unable" wx:if="{{collectInfo.isEnded}}">{{isCollect?'已提交':'已过期'}}</button>
+  <button class="button unable" wx:if="{{collectInfo.isEnded}}">{{isCollect==-1?'未参与':isCollect?'已提交':'已过期'}}</button>
   <!-- 提交的按钮 -->
   <button class="button" bindtap="updateCollection" wx:elif="{{isCollect}}">{{isUpdating?'确认修改':'点击修改'}}</button>
   <!-- 修改的按钮 -->

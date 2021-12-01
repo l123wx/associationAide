@@ -85,7 +85,9 @@ Component({
           url: e.currentTarget.dataset.path
         })
       }else if(name=="编辑社团"){
-        
+        wx.navigateTo({
+          url: '/pages/associationInfo-update/associationInfo-update',
+        })
       }else if(name=="通讯录"||name=="成员管理"){
         wx.navigateTo({
           url: '/pages/addressList/addressList',

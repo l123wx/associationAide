@@ -40,8 +40,7 @@ Page({
       wx.setNavigationBarTitle({
         title: '创建成功',
       })
-    }
-    else if( options.type==2 ){
+    }else if( options.type==2 ){
       wx.setNavigationBarTitle({
         title: '邀请成员',
       })
@@ -104,9 +103,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    return {
-      title: "邀请你加入  "+this.data.associationName,
-      path: '/pages/association-apply/association-apply?cId='+app.globalData.associationInfo.id+"&name="+app.globalData.associationInfo.name
+    if(this.data.type == 2){
+      return {
+        title: "邀请你加入  "+this.data.associationName,
+        path: '/pages/association-apply/association-apply?cId='+app.globalData.associationInfo.id+"&name="+app.globalData.associationInfo.name
+      }
     }
   }
 })

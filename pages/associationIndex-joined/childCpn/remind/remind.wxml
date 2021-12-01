@@ -17,7 +17,7 @@
           title="{{item.title}}"
           content="{{item.content}}"
           beginTime="{{item.beginTime}}"
-          sId="{{item.id}}"/>
+          sId="{{item.remindId}}"/>
       </view>
       <!-- 通知 -->
       <view class="itemBox" wx:if="{{item.remindType==1}}">
@@ -25,7 +25,7 @@
           title="{{item.title}}"
           content="{{item.content}}"
           beginTime="{{item.beginTime}}"
-          nId="{{item.id}}"/> 
+          nId="{{item.remindId}}"/> 
       </view>
       <!-- 收集 -->
       <view class="itemBox" wx:if="{{item.remindType==2}}">
@@ -33,7 +33,7 @@
           title="{{item.title}}"
           content="{{item.content}}"
           beginTime="{{item.beginTime}}"
-          cId="{{item.id}}"/>
+          cId="{{item.remindId}}"/>
       </view>
     </block>
   </view>

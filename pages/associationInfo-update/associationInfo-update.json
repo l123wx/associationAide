@@ -4,5 +4,5 @@
     "van-uploader": "@vant/weapp/uploader/index",
     "van-notify": "@vant/weapp/notify/index"
   },
-  "navigationBarTitleText": "创建社团"
+  "navigationBarTitleText": "编辑社团信息"
 }

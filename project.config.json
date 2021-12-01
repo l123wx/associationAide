@@ -1,156 +1,163 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false,
-		"es6": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"nodeModules": true,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.11.1",
-	"appid": "wx888462c7cfb64e31",
-	"projectname": "%E7%A4%BE%E5%9B%A2%E5%B0%8F%E5%8A%A9%E6%89%8B",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"isGameTourist": false,
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": [
-				{
-					"id": 0,
-					"name": "pages/activity/activity",
-					"pathName": "pages/activity/activity",
-					"query": "id=200&name=网园资讯工作室",
-					"scene": null
-				},
-				{
-					"id": 2,
-					"name": "pages/activity-details/activity-details",
-					"pathName": "pages/activity-details/activity-details",
-					"query": "aId=200",
-					"scene": null
-				},
-				{
-					"id": 3,
-					"name": "pages/notify-details/notify-details",
-					"pathName": "pages/notify-details/notify-details",
-					"query": "nId=200",
-					"scene": 1008
-				},
-				{
-					"id": 4,
-					"name": "pages/userInfo-details/userInfo-details",
-					"pathName": "pages/userInfo-details/userInfo-details",
-					"query": "userId=203",
-					"scene": null
-				},
-				{
-					"id": 5,
-					"name": "pages/signIn-details/signIn-details",
-					"pathName": "pages/signIn-details/signIn-details",
-					"query": "sId=200&cId=200",
-					"scene": 1008
-				},
-				{
-					"id": -1,
-					"name": "pages/associationIndex-joined/associationIndex-joined",
-					"pathName": "pages/associationIndex-joined/associationIndex-joined",
-					"query": "nId=200",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/collection-details/collection-details",
-					"pathName": "pages/collection-details/collection-details",
-					"query": "cId=200",
-					"scene": null
-				},
-				{
-					"id": 8,
-					"name": "pages/activity-details-unjoin/activity-details-unjoin",
-					"pathName": "pages/activity-details-unjoin/activity-details-unjoin",
-					"query": "aId=200",
-					"scene": null
-				},
-				{
-					"id": 9,
-					"name": "pages/selectObjects-group/selectObjects-group",
-					"pathName": "pages/selectObjects-group/selectObjects-group",
-					"query": "userId=202&isSignIn=2&leaceContent=不知道为什么&sId=200",
-					"scene": null
-				},
-				{
-					"id": 10,
-					"name": "pages/selectObjects/selectObjects",
-					"pathName": "pages/selectObjects/selectObjects",
-					"query": "cId=200",
-					"scene": null
-				},
-				{
-					"id": 10,
-					"name": "pages/signIn-create/signIn-create",
-					"pathName": "pages/signIn-create/signIn-create",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 12,
-					"name": "pages/notify-create/notify-create",
-					"pathName": "pages/notify-create/notify-create",
-					"query": "id=200",
-					"scene": null
-				},
-				{
-					"id": 13,
-					"name": "pages/collection-create/collection-create",
-					"pathName": "pages/collection-create/collection-create",
-					"query": "id=200",
-					"scene": null
-				}
-			]
-		}
-	}
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.21.0",
+  "appid": "wx888462c7cfb64e31",
+  "projectname": "%E7%A4%BE%E5%9B%A2%E5%B0%8F%E5%8A%A9%E6%89%8B",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 0,
+          "name": "pages/addressList/addressList",
+          "pathName": "pages/addressList/addressList",
+          "query": "id=200&name=网园资讯工作室",
+          "scene": null
+        },
+        {
+          "id": 1,
+          "name": "pages/associationInfo-update/associationInfo-update",
+          "pathName": "pages/associationInfo-update/associationInfo-update",
+          "query": "aId=200",
+          "scene": null
+        },
+        {
+          "id": 3,
+          "name": "pages/notify-details/notify-details",
+          "pathName": "pages/notify-details/notify-details",
+          "query": "nId=200",
+          "scene": 1008
+        },
+        {
+          "id": 4,
+          "name": "pages/userInfo-details/userInfo-details",
+          "pathName": "pages/userInfo-details/userInfo-details",
+          "query": "userId=203",
+          "scene": null
+        },
+        {
+          "id": 4,
+          "name": "pages/editor/editor",
+          "pathName": "pages/editor/editor",
+          "query": "sId=200&cId=200",
+          "scene": 1008
+        },
+        {
+          "id": 5,
+          "name": "pages/associationIndex-unjoined/associationIndex-unjoined",
+          "pathName": "pages/associationIndex-unjoined/associationIndex-unjoined",
+          "query": "nId=200",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/collection-details/collection-details",
+          "pathName": "pages/collection-details/collection-details",
+          "query": "cId=200",
+          "scene": null
+        },
+        {
+          "id": 8,
+          "name": "pages/activity-details-unjoin/activity-details-unjoin",
+          "pathName": "pages/activity-details-unjoin/activity-details-unjoin",
+          "query": "aId=200",
+          "scene": null
+        },
+        {
+          "id": 9,
+          "name": "pages/selectObjects-group/selectObjects-group",
+          "pathName": "pages/selectObjects-group/selectObjects-group",
+          "query": "userId=202&isSignIn=2&leaceContent=不知道为什么&sId=200",
+          "scene": null
+        },
+        {
+          "id": 10,
+          "name": "pages/selectObjects/selectObjects",
+          "pathName": "pages/selectObjects/selectObjects",
+          "query": "cId=200",
+          "scene": null
+        },
+        {
+          "id": 10,
+          "name": "pages/signIn-create/signIn-create",
+          "pathName": "pages/signIn-create/signIn-create",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 12,
+          "name": "pages/notify-create/notify-create",
+          "pathName": "pages/notify-create/notify-create",
+          "query": "id=200",
+          "scene": null
+        },
+        {
+          "id": 13,
+          "name": "pages/collection-create/collection-create",
+          "pathName": "pages/collection-create/collection-create",
+          "query": "id=200",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/associationIndex-joined/associationIndex-joined",
+          "pathName": "pages/associationIndex-joined/associationIndex-joined",
+          "query": "id=200&name=网园资讯工作室",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

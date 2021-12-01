@@ -43,8 +43,17 @@
   /* border-bottom: 1px solid #ECECEC; */
   border-top: 1px solid #ECECEC;
 }
-.button {
-  padding: 30rpx 40rpx;
+.button{
+  width: 710rpx;
+  background-color: #61b6fd;
+  text-align: center;
+  height: 82rpx;
+  line-height: 82rpx;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  color: #fff;
+  display: block;
+  margin: 30rpx auto;
 }
 @media screen and (max-height: 500px) {
   .container {

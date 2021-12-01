@@ -74,10 +74,8 @@ Page({
       url: '/pages/collection-create/collection-create',
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  // 获取收集列表
+  getCollectList(){
     request({
       url: "/communityCollect/getUserAllCollectInCommunity",
       data: {cId:app.globalData.associationInfo.id}
@@ -115,6 +113,12 @@ Page({
       })
     })
   },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -127,7 +131,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getCollectList();
   },
 
   /**
@@ -155,13 +159,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   }
 })

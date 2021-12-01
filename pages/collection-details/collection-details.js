@@ -35,7 +35,7 @@ Page({
     // 是否正在编辑（修改）
     isUpdating: false,
     //记录信息是否修改了，如果没有修改点击确认修改就不提交了
-    isChanged: false,
+    isChanged: -1,
   },
   // 点击任一功能时触发
   functionClick(e) {
@@ -263,7 +263,7 @@ Page({
         userLists: res.data.collectUserVos,
         userStatus: app.globalData.associationInfo.userStatus,
         readedUserLists: readedUserArray,
-        isCollect: (res.data.isCollect==1)
+        isCollect: res.data.isCollect
       })
       console.log(this.data.collectInfo)
     }).catch(err=>{

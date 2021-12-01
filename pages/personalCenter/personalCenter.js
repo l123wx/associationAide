@@ -93,12 +93,12 @@ Page({
     },
     // 功能栏目列表
     settingList: {
-      "about": {
-        title: "关于小助手",
-        iconClass: "iconprompt",
-        iconColor: "#61b6fd",
-        content: ""
-      },
+      // "about": {
+      //   title: "关于小助手",
+      //   iconClass: "iconprompt",
+      //   iconColor: "#61b6fd",
+      //   content: ""
+      // },
       "createAssociation": {
         title: "创建社团",
         iconClass: "icontianjia11",
@@ -111,12 +111,12 @@ Page({
         iconColor: "#6e7fff",
         content: ""
       },
-      "updateLog": {
-        title: "更新日志",
-        iconClass: "iconemail",
-        iconColor: "#26c6ff",
-        content: ""
-      },
+      // "updateLog": {
+      //   title: "更新日志",
+      //   iconClass: "iconemail",
+      //   iconColor: "#26c6ff",
+      //   content: ""
+      // },
     },
     // 用户名
     username:'',
@@ -185,7 +185,9 @@ Page({
         url: '/pages/about/about',
       })
     }else if(e.currentTarget.dataset.title=="创建社团"){
-
+      wx.navigateTo({
+        url: '/pages/association-create/association-create',
+      })
     }else if(e.currentTarget.dataset.title=="使用帮助"){
       wx.navigateTo({
         url: '/pages/usinghelp/usinghelp',
@@ -403,13 +405,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   }
 })

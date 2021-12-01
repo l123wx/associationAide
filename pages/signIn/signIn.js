@@ -74,10 +74,8 @@ Page({
       url: '/pages/signIn-create/signIn-create',
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  // 获取签到列表信息
+  getSignInList(){
     request({
       url: "/communitySignIn/getUserAllSignInCommunity",
       data: {cId:app.globalData.associationInfo.id}
@@ -114,6 +112,12 @@ Page({
       })
     })
   },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -126,7 +130,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getSignInList();
   },
 
   /**
@@ -154,13 +158,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   }
 })

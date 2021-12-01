@@ -8,7 +8,8 @@ Page({
   data: {
     userId: -1,
     avatarUrl: '',
-    userName: '',
+    // 昵称
+    nickName: '',
     // 是否为管理员
     isAdmin: false,
     // 使用中操作的用户的身份
@@ -160,16 +161,16 @@ Page({
       console.log(res)
       let infoList = this.data.infoList;
       console.log(infoList)
-      infoList.username.content = res.data.stuName;
-      infoList.stuNum.content = res.data.stuId;
-      infoList.gender.content = res.data.gender==1?'男':'女';
-      infoList.college.content = res.data.stuCollege;
-      infoList.profession.content = res.data.stuMajor;
-      infoList.grade.content = res.data.stuGrade;
-      infoList.class.content = res.data.stuClass;
-      infoList.phone.content = res.data.stuMobile;
-      let associationUserInfo = this.data.associationUserInfo;
-      associationUserInfo.department.content = res.data.departmentName;
+      infoList.username.content = res.data.stuName || '';
+      infoList.stuNum.content = res.data.stuId || '';
+      infoList.gender.content = res.data.gender==0?'未知':(res.data.gender==1?'男':'女');
+      infoList.college.content = res.data.stuCollege || '';
+      infoList.profession.content = res.data.stuMajor || '';
+      infoList.grade.content = res.data.stuGrade || '';
+      infoList.class.content = res.data.stuClass || '';
+      infoList.phone.content = res.data.stuMobile || '';
+      let associationUserInfo = this.data.associationUserInfo || '';
+      associationUserInfo.department.content = res.data.departmentName || '';
       associationUserInfo.userStatus.content = function(){
         if(res.data.communityStatus==1||res.data.communityStatus==0){
           return '在职'
@@ -180,7 +181,7 @@ Page({
       this.setData({
         infoList,
         associationUserInfo,
-        userName: res.data.stuName,
+        nickName: res.data.nickName,
         avatarUrl: res.data.avatarUrl,
         isAdmin: res.data.communityStatus==1,
         userStatus: app.globalData.associationInfo.userStatus
@@ -235,13 +236,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   }
 })

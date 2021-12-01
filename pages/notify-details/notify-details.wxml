@@ -20,7 +20,7 @@
         <view>{{notifyInfo.time}}</view>
       </view>
       <!-- 地点 -->
-      <view class="address">
+      <view class="address" wx:if="{{notifyInfo.place}}">
         <text class="iconfont icondidian"></text>
         <view>{{notifyInfo.place}}</view>
       </view>

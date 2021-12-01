@@ -73,6 +73,6 @@
     </view>
   </view>
   <!-- 按钮 -->
-  <button wx:if="{{isSignIn}}" class="button isSignIn">已签</button>
+  <button wx:if="{{isSignIn!=0}}" class="button isSignIn">{{isSignIn==-1?'未参与':'已签'}}</button>
   <button wx:else class="button" bindtap="scanCode">扫码签到</button>
 </scroll-view>

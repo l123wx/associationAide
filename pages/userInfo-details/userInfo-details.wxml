@@ -1,7 +1,7 @@
 <view class="box">
   <view class="header">
     <image src="{{avatarUrl}}" mode="" class="avatar"></image>
-    <view class="name">{{userName}}</view>
+    <view class="name">{{nickName}}</view>
   </view>
   <!-- 成员身份 -->
   <view class="list_box">

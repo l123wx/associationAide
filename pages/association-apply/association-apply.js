@@ -35,8 +35,8 @@ Page({
       }).then(res=>{
         console.log(res)
         if(res.msg == "申请成功！"){
-          wx.navigateTo({
-            url: '/pages/msgPage/msgPage?type=3',
+          wx.reLaunch({
+            url: '/pages/msgPage/msgPage?type=1',
           })
         }else{
           Notify({ type: 'danger', message: '申请失败，请勿重复发送申请！' });
@@ -112,13 +112,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   }
 })

@@ -165,7 +165,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    const pages = getCurrentPages(); //获取当前所有活跃的对象
+    const prePage = pages[pages.length - 2]; //获取上一个页面
+    prePage.getNotifyList();
   },
 
   /**
@@ -179,13 +181,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   }
 })

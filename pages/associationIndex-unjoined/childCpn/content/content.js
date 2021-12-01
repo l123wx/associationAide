@@ -42,6 +42,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
-  }
+    onEditorReady() {
+      const that = this
+      this.createSelectorQuery().select('#editor').context(function (res) {
+        that.editorCtx = res.context
+        that.editorCtx.setContents({
+          html: that.data.associationInfo.communityArticle.content
+        })
+    }).exec()
+    },
+  },
 })

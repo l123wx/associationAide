@@ -33,12 +33,13 @@
     "pages/selectObjects/selectObjects",
     "pages/selectObjects-group/selectObjects-group",
     "pages/allRemind/allRemind",
-    "pages/association-create/association-create"
+    "pages/association-create/association-create",
+    "pages/associationInfo-update/associationInfo-update",
+    "pages/editor/editor"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#61b6fd",
-    "backgroundColor": "#61b6fd",
     "navigationBarTitleText": "社团小助手",
     "navigationBarTextStyle": "white"
   },

@@ -35,7 +35,7 @@ Page({
     // 用户的类型
     userStatus: -1,
     // 是否已经签到
-    isSignIn: false,
+    isSignIn: -1,
     // 二维码链接
     ERcodeUrl: '',
   },
@@ -223,7 +223,7 @@ Page({
         userLists: res.data.signInUserVos,
         userStatus: app.globalData.associationInfo.userStatus,
         readedUserLists: readedUserArray,
-        isSignIn: (res.data.isSignIn==1)
+        isSignIn: res.data.isSignIn
       })
     }).catch(err=>{
       console.log(err)

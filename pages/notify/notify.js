@@ -49,8 +49,6 @@ Page({
     userNoticeList: [],
     // 作为管理员的通知列表
     managerNoticeList: [],
-    // 社团id
-    id: -1,
   },
   // 点击一级导航栏时触发
   firstNavClick(e) {
@@ -73,10 +71,8 @@ Page({
       url: '/pages/notify-create/notify-create',
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  // 获取通知列表
+  getNotifyList(){
     request({
       url: "/communityNotice/getUserAllNoticeInCommunity",
       data: {cId:app.globalData.associationInfo.id}
@@ -84,10 +80,15 @@ Page({
       this.setData({
         userStatus: res.data.userStatus,
         managerNoticeList: res.data.managerNoticeList,
-        userNoticeList: res.data.userNoticeList,
-        id: options.id
+        userNoticeList: res.data.userNoticeList
       })
     })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.getNotifyList();
   },
 
   /**
@@ -129,13 +130,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   }
 })
